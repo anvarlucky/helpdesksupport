@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-/*    public function __construct()
+    public function login(Request $request)
     {
-        $this->middleware('auth');
-    }*/
+        if($request-> isMethod('post')) {
 
-    public function login()
-    {
-        return view('login');
+            $response = $this->post('login123', $request->except('_token'));
+            dd($response);
+            return view('login');
+        }
     }
 }
