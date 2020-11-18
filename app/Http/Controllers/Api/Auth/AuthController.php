@@ -13,6 +13,11 @@ use Laravel\Passport\Passport;
 class AuthController extends Controller
 {
 
+    protected $headers;
+    public function __construct()
+    {
+        $this->headers = ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, Origin'];
+    }
     public function login(LoginRequest $request)
     {
         $loginData = [
@@ -30,7 +35,7 @@ class AuthController extends Controller
         $expTime = \DateTime::createFromFormat("Y-m-d H:i:s", $endTime);
         $lifeTime = Passport::tokensExpireIn($expTime);
         return $lifeTime;*/
-        return response(['user'=>auth()->user(), 'access_token' => $accessToken/*, 'token_lifeTime' => $lifeTime*/]);
+        return response(['user'=>auth()->user(), 'access_token' => $accessToken/*, 'token_lifeTime' => $lifeTime*/])->withHeaders($this->headers);
     }
 
     public function registration(RegisterRequest $request)
@@ -46,13 +51,14 @@ class AuthController extends Controller
             'password' => Hash::make($request['password']),
             ];
         $user = User::create($requestAll);
-        $accessToken = $user->createToken('authToken')->accessToken;
-        return response(['user' => $user, 'access_token' => $accessToken], '200');
+        //$accessToken = $user->createToken('authToken')->accessToken;
+        return response(['user' => $user/*, 'access_token' => $accessToken*/], '200');
     }
 
     public function logout()
     {
         $token = auth('api')->user()->token()->revoke();
-        return $this->response()->json($token, '200');
+        if($token == true)
+        return response()->json(['message' => 'You Logged out!'], 200);
     }
 }
