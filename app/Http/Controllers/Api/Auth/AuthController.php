@@ -29,12 +29,6 @@ class AuthController extends Controller
             return response(['message' => 'Invalid User!']);
         }
        $accessToken = auth()->user()->createToken('authToken')->accessToken;
-        /*
-        $startTime = date("Y-m-d H:i:s");
-        $endTime = date("Y-m-d H:i:s",strtotime('+7 days +1 hour +30 minutes +45 seconds', strtotime($startTime)));
-        $expTime = \DateTime::createFromFormat("Y-m-d H:i:s", $endTime);
-        $lifeTime = Passport::tokensExpireIn($expTime);
-        return $lifeTime;*/
         return response(['user'=>auth()->user(), 'access_token' => $accessToken/*, 'token_lifeTime' => $lifeTime*/])->withHeaders($this->headers);
     }
 

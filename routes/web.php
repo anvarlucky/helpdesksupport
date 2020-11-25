@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::match(['get','post'],'/', 'Client\Auth\AuthController@login')->name('login');
-Route::group(['middleware' => ['auth:api'], 'namespace' => 'Client'],function(){
+Route::group(['namespace' => 'Client'],function(){
     Route::get('test','TestController@test');
 });
