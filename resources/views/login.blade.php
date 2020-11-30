@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"  href="{{asset('/assets/css/bootstrap.css')}}">
     <link rel="stylesheet"  href="{{asset('/assets/css/main.css')}}">
-    <title>Proyekt</title>
+    <title>Dasturlar</title>
 </head>
 <body class="login-body">
 <header class="d-flex justify-content-center align-items-center flex-column min-vh-100" >
@@ -14,7 +14,7 @@
 
     <!-- Login Title Top block-section-->
     <div class="col-md-4 text-center px-5 pb-5">
-        <p class="login-title-text darkblue-color mb-5">Proyektlarni Qo'llab-quvvatlash tizimi</p>
+        <p class="login-title-text darkblue-color mb-5">Dasturlarni Qo'llab-quvvatlash tizimi</p>
     </div>
     <!-- Form Center block-section-->
     <div class="pt-4 pb-5 mb-5 px-4 align-items-center justify-content-center bg-white login-box">
@@ -56,7 +56,7 @@
             <p class="login-help-texts darkblue-color number-title mb-0">Texnik qo'llab-quvvatlash hizmati:</p>
         </li>
         <li>
-            <p class="login-help-texts darkblue-color number-login">(+998 71) 244-03-58</p>
+            <p class="login-help-texts darkblue-color number-login">(+998 71) 123-45-67</p>
         </li>
         <li class="d-flex align-items-center justify-content-center">
             <a href="#" class="text-decoration-none mx-3">
