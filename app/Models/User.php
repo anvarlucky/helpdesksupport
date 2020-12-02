@@ -17,8 +17,8 @@ class User extends Authenticatable
     protected $guarded = [];
     protected $dates = ['deleted_at'];
 
-/*    public static function createUser()
+    public static function getAll()
     {
-        User::
-    }*/
+        return self::select('id','firstname','email','phone','role_id')->get();
+    }
 }
