@@ -15,6 +15,6 @@ class Project extends Model
 
     public static function getOne($id)
     {
-        return Project::select('*')->where('id',$id)->findOrFail();
+        return Project::select('*')->where('id',$id)->get();
     }
 }

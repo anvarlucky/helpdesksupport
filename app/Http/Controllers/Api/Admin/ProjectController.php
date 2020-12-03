@@ -103,15 +103,14 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editProject = Project::getOne($id);
-        $updateProject = Project::update([
-                $editProject->name => $request->name,
-                $editProject->url => $request->url
-            ]);
+        $editProject = Project::find($id);
+                $editProject->name = $request->input('name');
+                $editProject->url = $request->input('url');
+                $editProject->save();
         return response()->json([
             'success' => true,
             'lang' => app()->getLocale(),
-            'data' => $updateProject,
+            'data' => $editProject,
             'status' => 200
         ])->withHeaders($this->headers);
 
@@ -125,6 +124,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleteProject = Project::destroy($id);
+        if($deleteProject== true)
+        {
+            return response()->json([
+                'success' => true,
+                'lang' => app()->getLocale(),
+                'status' => 200
+            ])->withHeaders($this->headers);
+        }
     }
 }
