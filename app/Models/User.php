@@ -21,4 +21,9 @@ class User extends Authenticatable
     {
         return self::select('id','firstname','email','phone','role_id')->get();
     }
+
+    public function tickets()
+    {
+        return $this->belongsToMany('App\Models\Ticket','ticket_users','user_id','ticket_id');
+    }
 }

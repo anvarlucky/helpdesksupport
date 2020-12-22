@@ -2,25 +2,17 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseControllerForApi;
 use Illuminate\Http\Request;
 use App\Models\Project;
 
-class ProjectController extends Controller
+class ProjectController extends BaseControllerForApi
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    protected $headers;
-    public function __construct()
-    {
-        $this->headers = [
-            'Accept' => 'application/json',
-            'Language' => app()->getLocale(),
-        ];
-    }
 
     public function index()
     {
@@ -30,7 +22,7 @@ class ProjectController extends Controller
            'lang' => app()->getLocale(),
             'data' => $projects,
             'status' => 200
-        ]);
+        ])->withHeaders($this->headers);
     }
 
     /**
