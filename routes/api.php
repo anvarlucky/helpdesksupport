@@ -21,7 +21,15 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', 'Api\Auth\AuthController@login');
 Route::post('registration', 'Api\Auth\AuthController@registration');
 
-Route::group(['middleware' => 'auth:api', 'namespace' => 'Api'], function(){
+Route::group(['middleware' => 'auth:api', 'namespace' => 'Api\Client', 'prefix' => 'client'], function(){
     Route::get('test', 'TestController@test');
+    Route::apiResource('tickets', 'TicketController');
     Route::get('logout', 'Auth\AuthController@logout');
+});
+
+Route::group([/*'middleware' => 'auth:api', */'namespace' => 'Api\Admin', 'prefix' => 'admin'], function(){
+   Route::apiResource('users', 'UserController');
+   Route::apiResource('projects', 'ProjectController');
+   Route::apiResource('categories', 'CategoryController');
+
 });
