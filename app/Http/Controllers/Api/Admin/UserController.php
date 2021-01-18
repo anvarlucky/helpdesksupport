@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\BaseControllerForApi;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Project;
@@ -10,34 +10,11 @@ use App\Models\ProjectUser;
 use GuzzleHttp;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserController extends BaseControllerForApi
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    protected $headers;
-    public function __construct()
-    {
-        $this->headers = [
-            'Accept' => 'application/json',
-            'Language' => app()->getLocale(),
-        ];
-    }
-
     public function index()
     {
-        /*$client = new GuzzleHttp\Client('helpdesk.loc');
-        $users = $client->request('GET', 'api/users');*/ //client uchun
-        $users = User::getAll();
-        return response()->json([
-            'success' => true,
-            'lang' => app()->getLocale(),
-            'data' => $users,
-            'status' => 200
-        ])->withHeaders($this->headers);
+        return $this->responseSuccess(User::getAll());
     }
 
     /**

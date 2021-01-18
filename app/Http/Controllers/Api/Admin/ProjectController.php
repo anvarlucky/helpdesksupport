@@ -17,12 +17,7 @@ class ProjectController extends BaseControllerForApi
     public function index()
     {
         $projects = Project::getAll();
-        return response()->json([
-           'success' => true,
-           'lang' => app()->getLocale(),
-            'data' => $projects,
-            'status' => 200
-        ])->withHeaders($this->headers);
+        return $this->responseSuccess($projects);
     }
 
     /**
@@ -46,15 +41,14 @@ class ProjectController extends BaseControllerForApi
     {
         $requestAll = [
             'name' => $request->name,
-            'url' => $request->url
+            'url' => $request->url,
+            'user_id' => $request->user_id,
         ];
         $project = Project::create($requestAll);
-        return response()->json([
-            'success' => true,
-            'lang' => app()->getLocale(),
-            'data' => $project,
-            'status' => 201
-        ])->withHeaders($this->headers);
+        if($project)
+        {
+        return $this->responseSave($project);
+        }
     }
 
     /**

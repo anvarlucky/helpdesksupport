@@ -17,7 +17,9 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->text('description_to_client')->nullable();
             $table->string('screenshot')->nullable();
+            $table->string('screenshot_to_client')->nullable();
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')
                 ->references('id')
@@ -27,6 +29,8 @@ class CreateTicketsTable extends Migration
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories');
+            $table->date('deadline')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
             $table->softDeletes();
         });
