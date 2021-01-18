@@ -22,10 +22,16 @@ class TicketController extends BaseControllerForApi
 
     public function store(Request $request)
     {
+        $requestAll = $request->except('_token');
+        if($request->hasFile('screenshot')) {
+            $uploadFile = $request->file('screenshot');
+            $fileName = Ticket::uploadPhoto($uploadFile);
+            $requestAll['screenshot'] = $fileName;
+        }
         $ticket = new Ticket;
         $ticket->title = $request->title;
         $ticket->description = $request->description;
-        $ticket->screenshot = $request->screenshot;
+        $ticket->screenshot = $fileName;
         $ticket->project_id = $request->project_id;
         $ticket->category_id = $request->category_id;
         $ticket->save();
@@ -38,5 +44,17 @@ class TicketController extends BaseControllerForApi
                 'status' => 201
             ])->withHeaders($this->headers);
         }
+    }
+
+    public function show($id)
+    {
+        $ticket = Ticket::select('*')->findOrFail($id);
+        return response()->json([
+            'success' => true,
+            'lang' => app()->getLocale(),
+            'data' => $ticket,
+            'users'=>$ticket->users,
+            'status' => 200
+        ])->withHeaders($this->headers);
     }
 }

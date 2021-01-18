@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Client\Admin;
 
 use App\Http\Controllers\Client\BaseControllerForClient;
 use Illuminate\Http\Request;
@@ -10,11 +10,9 @@ class UserController extends BaseControllerForClient
 {
     public function index()
     {
-        $client = new Client(['base_uri' => 'http://helpdesk.loc']);
-        $response = $client->request('GET','api/admin/users');
-        $users = json_decode($response->getBody());
+        $response = $this->get('http://helpdesk.loc/api/admin/users');
         return view('admin.users.index',[
-            'users' => $users->data
+            'users' => $response->data
         ]);
     }
 
