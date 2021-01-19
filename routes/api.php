@@ -34,6 +34,7 @@ Route::group([/*'middleware' => 'auth:api',*/ 'namespace' => 'Api\Admin', 'prefi
 
 });
 Route::group([/*'middleware' => 'auth:api', */'namespace' => 'Api\Programmer', 'prefix' => 'programmer'], function(){
-   Route::apiResource('tickets', 'TicketController');
+   Route::get('tickets', 'TicketController');
+   Route::get('ticket/{id}', 'TicketController')->name('ticket');
    Route::get('logout', 'Api\AuthController@logout');
 });

@@ -18,6 +18,7 @@ class TicketController extends BaseControllerForApi
 
     public function create($id)
     {
-
+        $ticket = Ticket::findOrFail($id);
+        return $this->responseSuccess($ticket);
     }
 }
