@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad08b1f4-4ce0-43ff-a890-94a3a68f74c9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Programmer/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Programmer/TicketController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/tickets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/tickets/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+              <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
               <folding>
                 <element signature="e#58#94#0#PHP" expanded="true" />
               </folding>
@@ -456,12 +452,12 @@
       <workItem from="1606728576912" duration="26763000" />
       <workItem from="1607917829054" duration="1898000" />
       <workItem from="1608527840942" duration="86742000" />
-      <workItem from="1609127101579" duration="102152000" />
+      <workItem from="1609127101579" duration="102282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296322000" />
+    <option name="totallyTimeSpent" value="296452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2568" y="-8" width="2576" height="1416" extended-state="6" />
@@ -472,8 +468,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.17928287" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14228936" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.17928287" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14228936" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3298887" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -897,7 +893,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
           <folding>
             <element signature="e#58#94#0#PHP" expanded="true" />
           </folding>
