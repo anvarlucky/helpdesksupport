@@ -9,7 +9,7 @@
             </div>
         @endif
         <div class="form-group col-md-12">
-            {{Form::open(['route' => ['ticket.update',$ticket->id], 'method' => 'put','files'=>true])}}
+            {{Form::open(['route' => ['tickets.update',$ticket->id], 'method' => 'put','files'=>true])}}
             @csrf
             @include('programmer.tickets._form')
             <div class="form-group">

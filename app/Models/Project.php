@@ -17,4 +17,14 @@ class Project extends Model
     {
         return Project::select('*')->where('id',$id)->get();
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User','project_user','user_id','project_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

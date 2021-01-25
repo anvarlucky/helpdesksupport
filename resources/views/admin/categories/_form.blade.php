@@ -1,4 +1,5 @@
-<div class="form-group col-md-12">
+
+<div class="form-group">
     <br/>
     <label>Kategoriya nomi</label>
     {{Form::text('name[uz]', $category->name['uz']??null, ['class' => 'form-control'])}}

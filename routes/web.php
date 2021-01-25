@@ -14,7 +14,8 @@ Route::group(['namespace' => 'Client\Programmer', /*'middleware' => 'auth',*/ 'p
     //Route::get('logout','\App\Http\Controllers\Client\AuthController@logout');
 });
 Route::group(['namespace' => 'Client\Admin', /*'middleware' => 'auth',*/ 'prefix' => 'admin'],function(){
-        Route::resource('users', 'UserController')->middleware(['auth']);
+        Route::get('home','HomeController@index');
+        Route::resource('users', 'UserController');
         Route::resource('categories', 'CategoryController');
         Route::resource('projects', 'ProjectController');
         Route::match(['get','post'],'logout','\App\Http\Controllers\Client\AuthController@logout');

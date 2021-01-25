@@ -11,49 +11,6 @@ use Carbon\Carbon;
 
 class AuthController extends  BaseControllerForApi
 {
-
-/*    protected $headers;
-    public function __construct()
-    {
-        $this->headers = ['Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Headers'=> 'Content-Type, X-Auth-Token, Origin'];
-    }
-    public function login(LoginRequest $request)
-    {
-        $loginData = [
-           'email' => $request->email,
-            'password' =>$request->password,
-        ];
-        if(!auth()->attempt($loginData))
-        {
-            return response(['message' => 'Invalid User!']);
-        }
-       $accessToken = auth()->user()->createToken('authToken')->accessToken;
-        return response(['user'=>auth()->user(), 'access_token' => $accessToken])->withHeaders($this->headers);
-    }
-
-    public function registration(RegisterRequest $request)
-    {
-        $requestAll = [
-            'firstname' => $request['firstname'],
-            'lastname' =>  $request['lastname'],
-            'surname' => $request['surname'],
-            'role_id' => $request['role_id'],
-            'login' => $request['login'],
-            'phone' => $request['phone'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-            ];
-        $user = User::create($requestAll);
-        return response(['user' => $user], '200');
-    }
-
-    public function logout()
-    {
-        $token = auth('api')->user()->token()->revoke();
-        if($token == true)
-        return response()->json(['message' => 'You Logged out!'], 200);
-    }*/
-
     public function login(LoginRequest $request){
         $credentials = $request->only('email', 'password');
         if (!Auth::attempt($credentials)) {

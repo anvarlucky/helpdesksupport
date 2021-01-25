@@ -1,3 +1,3 @@
 @foreach($tickets as $key => $ticket)
-    {{$ticket->title}}<br/>
+    {{$ticket->id}}|{{$ticket->title}}<br/>
 @endforeach

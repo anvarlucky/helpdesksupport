@@ -17,7 +17,10 @@ class ProjectController extends BaseControllerForApi
     public function index()
     {
         $projects = Project::getAll();
-        return $this->responseSuccess($projects);
+        $project = Project::select('id','user_id')->get();
+        foreach ($project as $project1)
+            $user_name = $project1->user->email;
+        return response()->json(['user_name'=>$user_name,'data'=>$projects]);
     }
 
     /**
@@ -59,7 +62,8 @@ class ProjectController extends BaseControllerForApi
      */
     public function show($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return $project->user->email;
     }
 
     /**

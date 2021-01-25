@@ -18,11 +18,16 @@ class User extends Authenticatable
 
     public static function getAll()
     {
-        return self::select('id','firstname','email','phone','role_id')->get();
+        return self::select('id','firstname','email','phone','role_id','deleted_at')->get();
     }
 
     public function tickets()
     {
         return $this->belongsToMany('App\Models\Ticket','ticket_users','user_id','ticket_id');
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany('App\Models\Project','project_user','project_id','user_id');
     }
 }

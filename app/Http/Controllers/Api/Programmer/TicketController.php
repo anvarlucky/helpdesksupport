@@ -12,13 +12,13 @@ class TicketController extends BaseControllerForApi
     public function index()
     {
         $user = Auth::user();
-        $tickets = Ticket::select('*')->where('project_id', 3)->get();
+        $tickets = Ticket::select('*')->where('project_id', 2)->get();
         return $this->responseSuccess($tickets);
     }
 
     public function edit($id)
     {
-        $ticket = Ticket::findOrFail($id);
+        $ticket = Ticket::select('id')->findOrFail($id);
         return $this->responseSuccess($ticket);
     }
 
@@ -30,7 +30,8 @@ class TicketController extends BaseControllerForApi
             $fileName = Ticket::uploadPhoto($uploadFile);
             $requestAll['screenshot_to_client'] = $fileName;
         }
-        $ticket = Ticket::findOrFail($id);
+       /* $ticket = Ticket::findOrFail($id);*/
+        $ticket = Ticket::select('id')->findOrFail($id);
         $ticket->description_to_client = $request->description_to_client;
         $ticket->screenshot_to_client = $fileName;
         $ticket->deadline = $request->deadline;
