@@ -14,6 +14,7 @@ Route::group([/*'middleware' => 'auth:api',*/ 'namespace' => 'Api\Admin', 'prefi
    Route::apiResource('users', 'UserController');
    Route::apiResource('projects', 'ProjectController');
    Route::apiResource('categories', 'CategoryController');
+   Route::apiResource('faq', 'FaqController');
     Route::get('logout', 'Api\AuthController@logout');
 
 });

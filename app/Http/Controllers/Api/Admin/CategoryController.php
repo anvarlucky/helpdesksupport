@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Api\BaseControllerForApi;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Categories\CategoryCreateRequest;
 use App\Models\Category;
 
 class CategoryController extends BaseControllerForApi
@@ -14,7 +14,7 @@ class CategoryController extends BaseControllerForApi
         return $this->responseSuccess($categories);
     }
 
-    public function store(Request $request)
+    public function store(CategoryCreateRequest $request)
     {
         $request = [
             'name->uz' => $request->name['uz'],
@@ -22,9 +22,6 @@ class CategoryController extends BaseControllerForApi
             'name->en' => $request->name['en'],
         ];
         $category = Category::create($request);
-        if($category)
-        {
-            return $this->responseSave($category);
-        }
+        return $this->responseSave($category);
     }
 }

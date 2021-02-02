@@ -18,6 +18,7 @@ Route::group(['namespace' => 'Client\Admin', /*'middleware' => 'auth',*/ 'prefix
         Route::resource('users', 'UserController');
         Route::resource('categories', 'CategoryController');
         Route::resource('projects', 'ProjectController');
+        Route::resource('faq', 'FaqController');
         Route::match(['get','post'],'logout','\App\Http\Controllers\Client\AuthController@logout');
 });
 });
