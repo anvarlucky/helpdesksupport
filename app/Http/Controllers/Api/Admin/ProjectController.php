@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Api\BaseControllerForApi;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Projects\ProjectCreateRequest;
 use App\Models\Project;
 
 class ProjectController extends BaseControllerForApi
@@ -17,10 +17,8 @@ class ProjectController extends BaseControllerForApi
     public function index()
     {
         $projects = Project::getAll();
-        $project = Project::select('id','user_id')->get();
-        foreach ($project as $project1)
-            $user_name = $project1->user->email;
-        return response()->json(['user_name'=>$user_name,'data'=>$projects]);
+        return $this->responseSuccess($projects);
+
     }
 
     /**
@@ -40,7 +38,7 @@ class ProjectController extends BaseControllerForApi
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectCreateRequest $request)
     {
         $requestAll = [
             'name' => $request->name,
@@ -48,10 +46,7 @@ class ProjectController extends BaseControllerForApi
             'user_id' => $request->user_id,
         ];
         $project = Project::create($requestAll);
-        if($project)
-        {
         return $this->responseSave($project);
-        }
     }
 
     /**

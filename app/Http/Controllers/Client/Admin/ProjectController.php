@@ -31,7 +31,6 @@ class ProjectController extends BaseControllerForClient
        {
            return redirect()->route('projects.index');
        }
-
        return redirect()->back()->withErrors($project->errors);
 
    }

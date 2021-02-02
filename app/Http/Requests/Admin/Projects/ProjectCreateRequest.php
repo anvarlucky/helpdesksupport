@@ -13,7 +13,7 @@ class ProjectCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class ProjectCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'unique:projects,name|min:3|required',
+            'url' => 'required|min:11|unique:projects,url',
+            'user_id' => 'required|int'
         ];
     }
 }
