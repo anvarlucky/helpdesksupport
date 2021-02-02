@@ -32,9 +32,16 @@ class BaseControllerForApi extends Controller
     }
 
     public function responseValidation($response){
+        $errors = [];
+        foreach ($response as $field => $message){
+            $errors[] = [
+                'field' => $field,
+                'message' => $message
+            ];
+        }
         return response()->json([
             'success' => false,
-            'errors' => $response
+            'errors' => $errors
         ], self::CODE_VALIDATION_ERROR)->withHeaders($this->headers);
     }
 

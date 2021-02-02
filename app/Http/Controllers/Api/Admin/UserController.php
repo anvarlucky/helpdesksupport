@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Api\BaseControllerForApi;
-use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Users\UserCreateRequest;
+//use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Project;
 use App\Models\ProjectUser;
@@ -33,7 +34,7 @@ class UserController extends BaseControllerForApi
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
         $user = new User();
         $user->firstname = $request->firstname;
@@ -44,15 +45,24 @@ class UserController extends BaseControllerForApi
         $user->role_id = $request->role_id;
         $user->login = $request->login;
         $user->phone = $request->phone;
-        if ($user->save()==true)
+        if($user->save()==true)
         {
+            return $this->responseSave($user);
+        }
+        return $this->responseValidation($user);
+        /*return $this->responseValidation($user);*/
+        /*if ($user->save()==true)
+        {
+
+
+
         return response()->json([
             'success' => true,
             'lang' => app()->getLocale(),
             'data' => $user,
             'status' => 201
         ])->withHeaders($this->headers);
-        }
+        }*/
     }
 
     /**
