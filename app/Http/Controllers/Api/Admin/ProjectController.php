@@ -8,12 +8,6 @@ use App\Models\Project;
 
 class ProjectController extends BaseControllerForApi
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function index()
     {
         $projects = Project::getAll();
@@ -21,23 +15,12 @@ class ProjectController extends BaseControllerForApi
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(ProjectCreateRequest $request)
     {
         $requestAll = [
@@ -49,43 +32,20 @@ class ProjectController extends BaseControllerForApi
         return $this->responseSave($project);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $project = Project::findOrFail($id);
-        return $project->user->email;
+        $email = $project->user->email;
+        return $this->responseSuccess($email);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-       return $id;
-        $editProject = Project::getOne($id);
-        return response()->json([
-            'success' => true,
-            'lang' => app()->getLocale(),
-            'data' => $editProject,
-            'status' => 200
-        ])->withHeaders($this->headers);
+        return $id;
+        $editProject = Project::findorFail($id);
+        return $this->responseSuccess($editProject);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $editProject = Project::find($id);
@@ -101,22 +61,9 @@ class ProjectController extends BaseControllerForApi
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $deleteProject = Project::destroy($id);
-        if($deleteProject== true)
-        {
-            return response()->json([
-                'success' => true,
-                'lang' => app()->getLocale(),
-                'status' => 200
-            ])->withHeaders($this->headers);
-        }
+        return $this->responseSuccess($deleteProject);
     }
 }

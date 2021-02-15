@@ -1,4 +1,4 @@
-@extends('programmer.layouts.main')
+@extends('admin.layouts.main')
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -14,7 +14,6 @@
                     <th>Project</th>
                     <th>Category</th>
                     <th>Status</th>
-                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -22,15 +21,14 @@
                     <tr>
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$ticket->id}} </td>
-                        <td><a href="#show"><span class="name">{{$ticket->title}}</span></a></td>
+                        <td>  <span class="name">{{$ticket->title}}</span> </td>
                         <td> <span class="product">{{$ticket->project_id}}</span> </td>
                         <td><span class="count">{{$ticket->category_id}}</span></td>
                         @if($ticket->status==1)
-                            <td><span class="btn btn-danger">Open</span></td>
+                        <td><span class="btn btn-danger">Open</span></td>
                         @elseif($ticket->status==2)
-                            <td><span class="btn btn-primary">Answered</span></td>
+                        <td><span class="btn btn-primary">Answered</span></td>
                         @endif
-                        <td><a href="{{route('tickets.edit',$ticket->id)}}" class="btn btn-success">Answer</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -38,3 +36,6 @@
         </div> <!-- /.table-stats -->
     </div>
 @endsection
+
+
+

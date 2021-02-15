@@ -1,3 +1,5 @@
+@extends('programmer.layouts.main')
+@section('content')
 <div class="container-fluid p-5">
     <div class="col-md-12 px-0 table-box">
         <div class="table-top-panel border-bottom d-flex align-items-center justify-content-between px-5 pt-5 pb-4">
@@ -10,6 +12,7 @@
         @endif
         <div class="form-group col-md-12">
             {{Form::open(['route' => ['tickets.update',$ticket->id], 'method' => 'put','files'=>true])}}
+            {{Form::hidden('status',2)}}
             @csrf
             @include('programmer.tickets._form')
             <div class="form-group">
@@ -19,3 +22,4 @@
         </div>
     </div>
 </div>
+@endsection

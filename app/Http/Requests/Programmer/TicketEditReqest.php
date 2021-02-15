@@ -24,7 +24,9 @@ class TicketEditReqest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'description_to_client' => 'required|min:5|max:100',
+            'screenshot_to_client' => 'required|max:2048',
+            'deadline' => 'required'
         ];
     }
 }

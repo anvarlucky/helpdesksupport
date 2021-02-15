@@ -2,11 +2,9 @@
 <div id="right-panel" class="right-panel">
     <!-- Header-->
     <header id="header" class="header">
-        <div class="top-left">
+        <div class="top-center">
             <div class="navbar-header">
-                <a class="navbar-brand" href="./"><img src="{{asset('/images/logo.png')}}" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('/images/logo2.png')}}" alt="Logo"></a>
-                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                <a href="">asdasdasdad</a>
             </div>
         </div>
         <div class="top-right">
@@ -97,7 +95,7 @@
 
                         <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                        <a class="nav-link" href="{{route('logout')}}"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
                     </div>
                 </div>
 

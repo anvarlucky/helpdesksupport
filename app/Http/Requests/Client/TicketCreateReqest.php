@@ -24,7 +24,9 @@ class TicketCreateReqest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5|max:100',
+            'description' => 'required|min:5|max:150',
+            'screenshot' => 'required|max:2048'
         ];
     }
 }

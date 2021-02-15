@@ -20,6 +20,8 @@ class CreateTicketsTable extends Migration
             $table->text('description_to_client')->nullable();
             $table->string('screenshot')->nullable();
             $table->string('screenshot_to_client')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('project_id');
             $table->foreign('project_id')
                 ->references('id')

@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Api\Client;
 
 use App\Http\Controllers\Api\BaseControllerForApi;
+use App\Http\Requests\Client\TicketCreateReqest;
 use App\Models\Ticket;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends BaseControllerForApi
 {
     public function index()
     {
-        $tickets = Ticket::getAll();
+        $user = Auth::user();
+        $tickets = Ticket::select('*')->where('user_id',$user->id)->get();
         return response()->json([
             'success' => true,
             'lang' => app()->getLocale(),
@@ -20,7 +22,7 @@ class TicketController extends BaseControllerForApi
         ])->withHeaders($this->headers);
     }
 
-    public function store(Request $request)
+    public function store(TicketCreateReqest $request)
     {
         $requestAll = $request->except('_token');
         if($request->hasFile('screenshot')) {
@@ -34,8 +36,9 @@ class TicketController extends BaseControllerForApi
         $ticket->screenshot = $fileName;
         $ticket->project_id = $request->project_id;
         $ticket->category_id = $request->category_id;
+        $ticket->user_id = $request->user_id;
         $ticket->save();
-        $ticket->users()->attach($request->users);
+       // $ticket->users()->attach($request->users);
         if($ticket==true){
             return response()->json([
                 'success' => true,
@@ -48,13 +51,7 @@ class TicketController extends BaseControllerForApi
 
     public function show($id)
     {
-        $ticket = Ticket::select('*')->findOrFail($id);
-        return response()->json([
-            'success' => true,
-            'lang' => app()->getLocale(),
-            'data' => $ticket,
-            'users'=>$ticket->users,
-            'status' => 200
-        ])->withHeaders($this->headers);
+        $ticket = Ticket::findOrFail($id);
+        return $this->responseSuccess($ticket);
     }
 }

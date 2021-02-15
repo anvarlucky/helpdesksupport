@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers\Client\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Client\BaseControllerForClient;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class HomeController extends BaseControllerForClient
 {
     public function index()
     {
-        return view('admin.home');
+        $statistics = $this->get('http://helpdesk.loc/api/admin/home');
+        return view('admin.home',
+            [
+            'statistics' => $statistics
+            ]
+        );
     }
 }

@@ -6,7 +6,7 @@
     <label>Muammo</label>
     {{Form::textarea('description', $ticket->description??null, ['class' => 'form-control'])}}
     <br>
-    <label>Muammo rasmi</label>
+    <label>Muammo rasmi <b>Fayl yuklash shart!</b></label>
     {{Form::file('screenshot', $ticket->screenshot??null, ['class' => 'form-control'])}}
     <br><label>Dasturni tanlang:</label>
     {{Form::select('project_id', [__(' ')]+Arr::pluck($projects,'name','id'),$ticket->project_id??null, ['class' => 'form-control', 'id'=>'curse'])}}
