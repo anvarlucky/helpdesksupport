@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client\Admin;
 use App\Http\Controllers\Client\BaseControllerForClient;
 use Illuminate\Http\Request;
 
+
 class ProjectController extends BaseControllerForClient
 {
    public function index()
@@ -17,7 +18,7 @@ class ProjectController extends BaseControllerForClient
 
    public function create()
    {
-       $users = $this->get('http://helpdesk.loc/api/admin/users');
+       $users = $this->get('http://helpdesk.loc/api/admin/programmers');
        return view('admin.projects.create',[
            'users' => $users->data
        ]);
@@ -34,4 +35,36 @@ class ProjectController extends BaseControllerForClient
        return redirect()->back()->withErrors($project->errors);
 
    }
+
+   public function show($id){
+        $project = $this->get('http://helpdesk.loc/api/admin/projects/'.$id);
+        return view('admin.projects.show',[
+            'project' => $project->data
+        ]);
+   }
+
+   public function edit($id){
+       $project = $this->get('http://helpdesk.loc/api/admin/projects/'.$id);
+       $users = $this->get('http://helpdesk.loc/api/admin/programmers');
+       return view('admin.projects.edit',[
+           'project' => $project->data,
+           'users' => $users->data
+       ]);
+   }
+
+   public function update(Request $request,$id){
+        $request = $request->except('token');
+        $project = $this->put('http://helpdesk.loc/api/admin/projects/'.$id,$request,false);
+        if ($project==true){
+            return redirect()->route('projects.index');
+        }
+   }
+
+    public function destroy($id)
+    {
+        $project = $this->delete('http://helpdesk.loc/api/admin/projects/'.$id);
+        if($project->success)
+            return redirect()->route('projects.index');
+        return redirect()->back()->withErrors($project->errors);
+    }
 }

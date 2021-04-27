@@ -36,11 +36,13 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\SetLanguage::class,
         ],
 
         'api' => [
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\SetLanguage::class,
         ],
     ];
 
@@ -62,5 +64,11 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'role' => \App\Http\Middleware\RoleAccess::class,
+        'roleClient' => \App\Http\Middleware\RoleAccessClient::class,
+        'roleProgrammer' => \App\Http\Middleware\RoleAccessProgrammer::class,
+        'roleSupport' => \App\Http\Middleware\RoleSupport::class,
+        'roleClientApi' => \App\Http\Middleware\RoleClientApi::class,
+/*        'language' => \App\Http\Middleware\SetLanguage::class,*/
     ];
 }

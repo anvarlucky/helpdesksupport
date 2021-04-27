@@ -12,7 +12,16 @@
                             <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                         </form>
                     </div>
-
+                    <div class="dropdown for-notification">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-language"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="notification">
+                            {{--<a href="{{route(Route::currentRouteName(),'en')}}" class="nav-link">EN</a>
+                            <a href="{{route(Route::currentRouteName(),'uz')}}" class="nav-link">UZ</a>
+                            <a href="{{route(Route::currentRouteName(),'ru')}}" class="nav-link">RU</a>--}}
+                        </div>
+                    </div>
                     <div class="dropdown for-notification">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
@@ -90,7 +99,7 @@
 
                         <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                        <a class="nav-link" href="{{route('logout')}}"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="{{route('logout',app()->getLocale())}}"><i class="fa fa-power -off"></i>Logout</a>
                     </div>
                 </div>
 

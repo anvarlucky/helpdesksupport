@@ -4,22 +4,35 @@
     <header id="header" class="header">
         <div class="top-left">
             <div class="navbar-header">
-                <a class="navbar-brand" href="./"><img src="{{asset('/images/logo.png')}}" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('/images/logo2.png')}}" alt="Logo"></a>
+                <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('/images/logo.png')}}" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="{{route('home')}}"><img src="{{asset('/images/logo2.png')}}" alt="Logo"></a>
                 <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
             </div>
         </div>
         <div class="top-right">
+
             <div class="header-menu">
+
                 <div class="header-left">
+
                     <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
-                        <form class="search-form">
+                        <form class="search-form" action="{{route('logout')}}" method="post">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
                             <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                         </form>
                     </div>
 
+                    <div class="dropdown for-notification">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-language"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="notification">
+                                {{--<a href="{{route(Route::currentRouteName(),'en')}}" class="nav-link">EN</a>
+                                <a href="{{route(Route::currentRouteName(),'uz')}}" class="nav-link">UZ</a>
+                                <a href="{{route(Route::currentRouteName(),'ru')}}" class="nav-link">RU</a>--}}
+                        </div>
+                    </div>
                     <div class="dropdown for-notification">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
@@ -91,13 +104,13 @@
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                        <a class="nav-link" href="#"><i class="fa fa- user"></i>@lang('right.profile')</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
+                        <a class="nav-link" href="#"><i class="fa fa- user"></i>@lang('right.notification')<span class="count">13</span></a>
 
-                        <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                        <a class="nav-link" href="#"><i class="fa fa -cog"></i>@lang('right.settings')</a>
 
-                        <a class="nav-link" href="{{route('logout')}}"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="{{route('logout',app()->getLocale())}}"><i class="fa fa-power -off"></i>@lang('right.logout')</a>
                     </div>
                 </div>
 

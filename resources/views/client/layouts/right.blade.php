@@ -2,13 +2,9 @@
 <div id="right-panel" class="right-panel">
     <!-- Header-->
     <header id="header" class="header">
-        <div class="top-center">
-            <div class="navbar-header">
-                <a href="">asdasdasdad</a>
-            </div>
-        </div>
         <div class="top-right">
             <div class="header-menu">
+                <a href="{{route('ticks.index')}}">Ticketlar</a>|   <a href="{{route('faqclient')}}">FAQ</a>
                 <div class="header-left">
                     <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
@@ -95,7 +91,7 @@
 
                         <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="{{route('logout')}}"><i class="fa fa-power -off"></i>Logout</a>
                     </div>
                 </div>
 

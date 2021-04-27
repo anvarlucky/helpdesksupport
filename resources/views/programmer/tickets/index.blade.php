@@ -12,6 +12,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Project</th>
+                    <th>Prioritet</th>
                     <th>Category</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -22,15 +23,26 @@
                     <tr>
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$ticket->id}} </td>
-                        <td><a href="#show"><span class="name">{{$ticket->title}}</span></a></td>
+                        <td><a href="{{route('tickets.show',$ticket->id)}}"><span class="name">{{$ticket->title}}</span></a></td>
                         <td> <span class="product">{{$ticket->project_id}}</span> </td>
+                        @if($ticket->priority==1)
+                            <td class="alert-primary"></td>
+                        @elseif($ticket->priority==2)
+                            <td class="alert-warning"></td>
+                        @elseif($ticket->priority==3)
+                            <td class="alert-danger"></td>
+                        @else
+                            <td></td>
+                        @endif
                         <td><span class="count">{{$ticket->category_id}}</span></td>
                         @if($ticket->status==1)
                             <td><span class="btn btn-danger">Open</span></td>
                         @elseif($ticket->status==2)
                             <td><span class="btn btn-primary">Answered</span></td>
+                        @else
+                            <td><span class="btn btn-success">@lang('table.closed')</span></td>
                         @endif
-                        <td><a href="{{route('tickets.edit',$ticket->id)}}" class="btn btn-success">Answer</a></td>
+                        <td><a href="{{route('tickets.edit',[/*app()->getLocale(),*/$ticket->id])}}" class="btn btn-success">Answer</a></td>
                     </tr>
                 @endforeach
                 </tbody>

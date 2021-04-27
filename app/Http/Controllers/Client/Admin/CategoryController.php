@@ -17,7 +17,11 @@ class CategoryController extends BaseControllerForClient
 
     public function create()
     {
-        return view('admin.categories.create');
+        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        return view('admin.categories.create',
+            [
+                'projects' => $projects->data
+            ]);
     }
 
     public function store(Request $request)
@@ -30,5 +34,41 @@ class CategoryController extends BaseControllerForClient
         }
 
         return redirect()->back()->withErrors($category->errors);
+    }
+
+    public function show($id){
+        $category = $this->get('http://helpdesk.loc/api/admin/categories/'.$id);
+        if($category->success){
+            return view('admin.categories.show',[
+                'category' => $category->data
+            ]);
+        }
+
+    }
+
+    public function edit($id){
+        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        $category = $this->get('http://helpdesk.loc/api/admin/categories/'.$id);
+        if($category->success) {
+            return view('admin.categories.edit', [
+                'category' => $category->data,
+                'projects' => $projects->data
+            ]);
+        }
+    }
+
+    public function update(Request $request,$id){
+        $request = $request->except('_token');
+        $category = $this->put('http://helpdesk.loc/api/admin/categories/'.$id,$request,false);
+        if ($category->success){
+            return redirect()->route('categories.index');
+        }
+    }
+
+    public function destroy($id){
+        $category = $this->delete('http://helpdesk.loc/api/admin/categories/'.$id);
+        if ($category->success){
+            return redirect()->route('categories.index');
+        }
     }
 }

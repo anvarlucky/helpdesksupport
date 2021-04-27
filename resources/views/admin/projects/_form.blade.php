@@ -4,6 +4,10 @@
     {{Form::text('name', $project->name??null, ['class' => 'form-control'])}}
     <label>Proyekt url</label>
     {{Form::text('url', $project->url??'http://', ['class' => 'form-control'])}}
-    <br><label>Masulni tanlang:</label>
-    {{Form::select('user_id', [__(' ')]+Arr::pluck($users,'firstname','id'),$project->user_id??null, ['class' => 'form-control'])}}
+    <br><label>Dasturchini tanlang:</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2" name="users[]">
+        @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->firstname}}</option>
+        @endforeach
+    </select>
 </div>

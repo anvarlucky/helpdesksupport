@@ -15,7 +15,7 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="count">{{$statistics->allTicket}}</span></div>
-                                        <div class="stat-heading">All Tickets</div>
+                                        <div class="stat-heading">Barcha ticketlar</div>
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +33,25 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="count">{{$statistics->openTicket}}</span></div>
-                                        <div class="stat-heading">Open Tickets</div>
+                                        <div class="stat-heading">Ochiq ticketlar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-five">
+                                <div class="stat-icon dib flat-color-3">
+                                    <i class="pe-7s-browser"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="text-left dib">
+                                        <div class="stat-text"><span class="count">{{$statistics->answerTicket}}</span></div>
+                                        <div class="stat-heading">Javob berilgan ticketlar</div>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +69,7 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="count">{{$statistics->closeTicket}}</span></div>
-                                        <div class="stat-heading">Closed Tickets</div>
+                                        <div class="stat-heading">Yopilgan ticketlar</div>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +87,7 @@
                                 <div class="stat-content">
                                     <div class="text-left dib">
                                         <div class="stat-text"><span class="count">{{$statistics->programmers}}</span></div>
-                                        <div class="stat-heading">Programmers</div>
+                                        <div class="stat-heading">Dasturchilar</div>
                                     </div>
                                 </div>
                             </div>
@@ -77,6 +95,8 @@
                     </div>
                 </div>
             </div>
+
+
             <!-- /Widgets -->
             <!--  Traffic  -->
             <div class="row">

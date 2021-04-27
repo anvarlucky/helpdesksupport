@@ -2,7 +2,7 @@
     <label for="">Izoh</label>
     {{Form::textarea('description_to_client', $ticket->description_to_client??null, ['class' => 'form-control'])}}
 </div>
-<label>Muammo rasmi <b>Fayl yuklash shart!</b></label>
+<label>Muammo rasmi</label>
 {{Form::file('screenshot_to_client', $ticket->screenshot_to_client??null, ['class' => 'form-control'])}}
 <br>
 <label>Sana</label>

@@ -22,8 +22,8 @@ class CreateFaqsTable extends Migration
             $table->jsonb('title');
             $table->jsonb('text');
             $table->string('file')->nullable();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

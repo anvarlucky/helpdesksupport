@@ -1,0 +1,9 @@
+@extends('admin.layouts.main')
+@section('content')
+<div class="container col-12">
+    {!! Form::open(['route' => ['announcement.store',app()->getLocale()],'method' => 'post','files'=>true]) !!}
+    @include('admin.announcement._form')
+    <button type="submit" class="btn btn-primary ml-3">Saqlash</button>
+    {!! Form::close() !!}
+</div>
+@endsection

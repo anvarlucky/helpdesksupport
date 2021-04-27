@@ -3,9 +3,9 @@
     <label>Foydalanuvchi nomi</label>
     {{Form::text('firstname', $user->firstname??null, ['class' => 'form-control'])}}
     <label>Foydalanuvchi familiyasi</label>
-    {{Form::text('lastname', $user->s_name??null, ['class' => 'form-control'])}}
+    {{Form::text('lastname', $user->lastname??null, ['class' => 'form-control'])}}
     <label>Foydalanuvchi otasining ismi</label>
-    {{Form::text('surname', $user->l_name??null, ['class' => 'form-control'])}}
+    {{Form::text('surname', $user->surname??null, ['class' => 'form-control'])}}
     <label>Foydalanuvchi emaili</label>
     {{Form::email('email', $user->email??null, ['class' => 'form-control'])}}
     @if(!isset($user))
@@ -13,9 +13,14 @@
             <label>Foydalanuvchi paroli</label>
             {{Form::password('password', ['class' => 'form-control'])}}
         </div>
+        @else
+        <div class="form-group">
+            <label>Foydalanuvchi paroli</label>
+            {{Form::text('password',$user->password??null, ['class' => 'form-control'])}}
+        </div>
     @endif
     <label>Rol:</label>
-    {{Form::select('role_id', [''=>'','1' => 'Admin', '2' => 'Dasturchi', '4' => 'Client'], $user->role_id??null,['class' => 'form-control'])}}
+    {{Form::select('role_id', [''=>'','1' => 'Admin', '2' => 'Dasturchi', '3' => 'Texnik-yordamchi', '4' => 'Client'], $user->role_id??null,['class' => 'form-control'])}}
     <label>Foydalanuvchi logini</label>
     {{Form::text('login', $user->login??null, ['class' => 'form-control'])}}
     <label>Foydalanuvchi tel.raqami</label>

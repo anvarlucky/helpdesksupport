@@ -11,7 +11,7 @@
             </div>
         @endif
         <div class="form-group col-md-12">
-            {{Form::open(['route' => ['tickets.update',$ticket->id], 'method' => 'put','files'=>true])}}
+            {{Form::open(['route' => ['tickets.update',[$ticket->id,app()->getLocale()]], 'method' => 'put','files'=>true])}}
             {{Form::hidden('status',2)}}
             @csrf
             @include('programmer.tickets._form')

@@ -26,7 +26,6 @@ class ProjectCreateRequest extends FormRequest
         return [
             'name' => 'unique:projects,name|min:3|required',
             'url' => 'required|min:11|unique:projects,url',
-            'user_id' => 'required|int'
         ];
     }
 }

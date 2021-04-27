@@ -3,45 +3,45 @@
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Admin Panel </a>
+                    <a href="{{route('home')}}"><i class="menu-icon fa fa-laptop"></i>@lang('left.panel')</a>
                 </li>
-                <li class="menu-title">Panel elementlari</li><!-- /.menu-title -->
+                <li class="menu-title">@lang('left.elements')</li><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Users</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>@lang('left.users')</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-file-word-o"></i><a href="{{route('users.index')}}">Foydalanuvchilar</a></li>
-                        <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
+                        <li><i class="fa fa-list"></i><a href="{{route('users.index',app()->getLocale())}}">@lang('left.usersList')</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Projects</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-product-hunt"></i>@lang('left.projects')</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-table"></i><a href="{{route('projects.index')}}">Dasturlar</a></li>
-                        <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                        <li><i class="fa fa-list"></i><a href="{{route('projects.index',app()->getLocale())}}">@lang('left.projectsList')</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Categories</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-camera-retro"></i>@lang('left.categories')</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('categories.index')}}">Kategoriyalar</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        <li><i class="menu-icon fa fa-list"></i><a href="{{route('categories.index',app()->getLocale())}}">@lang('left.cateoryList')</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>FAQ</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-question"></i>@lang('left.faq')</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('faq.index')}}">FAQ</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        <li><i class="menu-icon fa fa-list"></i><a href="{{route('faq.index',app()->getLocale())}}">@lang('left.faqList')</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Ticket</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-ticket"></i>@lang('left.tickets')</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-th"></i><a href="{{route('ticket.index')}}">Ticket</a></li>
-                        <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                        <li><i class="menu-icon fa fa-list"></i><a href="{{route('ticket.index',app()->getLocale())}}">@lang('left.ticketsList')</a></li>
                     </ul>
                 </li>
-
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Elonlar</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-list"></i><a href="{{route('announcement.index',app()->getLocale())}}">Elonlar</a></li>
+                    </ul>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>

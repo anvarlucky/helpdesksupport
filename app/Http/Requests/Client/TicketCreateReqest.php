@@ -26,7 +26,7 @@ class TicketCreateReqest extends FormRequest
         return [
             'title' => 'required|min:5|max:100',
             'description' => 'required|min:5|max:150',
-            'screenshot' => 'required|max:2048'
+            'screenshot' => 'max:2048'
         ];
     }
 }

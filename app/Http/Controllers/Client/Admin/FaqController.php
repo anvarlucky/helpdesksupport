@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client\Admin;
 
 use App\Http\Controllers\Client\BaseControllerForClient;
+use App\Models\v1\Faq;
 use Illuminate\Http\Request;
 
 class FaqController extends BaseControllerForClient
@@ -32,4 +33,38 @@ class FaqController extends BaseControllerForClient
             return redirect()->route('faq.index');
         }
     }
+
+    public function show($id){
+        $faq = $this->get('http://helpdesk.loc/api/admin/faq/'.$id);
+        if ($faq->success){
+            return view('admin.faq.show',[
+                'faq' => $faq->data
+            ]);
+        }
+    }
+
+    public function edit($id){
+        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        $faq = $this->get('http://helpdesk.loc/api/admin/faq/'.$id);
+        return view('admin.faq.edit',[
+            'projects' => $projects->data,
+            'faq' => $faq->data
+        ]);
+    }
+
+    public function update(Request $request,$id){
+        $request = $request->except('_token');
+        $faq = $this->put('http://helpdesk.loc/api/admin/faq/'.$id,$request,true,'file');
+        if ($faq->success){
+            return redirect()->route('faq.index');
+        }
+    }
+
+    public function destroy($id){
+        $faq = $this->delete('http://helpdesk.loc/api/admin/faq/'.$id);
+        if ($faq->success){
+            return redirect()->route('faq.index');
+        }
+    }
+
 }

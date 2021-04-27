@@ -16,6 +16,10 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->jsonb('name');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -183,8 +183,8 @@ class BaseControllerForClient extends Controller
         }
 
     }
-
+/*
     protected function view($url, $params = []){
         return view($this->viewPath.'.'.$url, $params);
-    }
+    }*/
 }
