@@ -2,137 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad08b1f4-4ce0-43ff-a890-94a3a68f74c9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/TicketController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Client/FaqController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/v1/ProjectUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/v1/TicketUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_13_112553_create_announcements_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_13_134913_create_announcement_project_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/left.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/right.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/left.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/right.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/left.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/right.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/uz/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/announcement/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/announcement/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/announcement/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/announcement/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/announcement/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/faq/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/projects/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tickets/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tickets/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tickets/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/client/faqs/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/client/faqs/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/ticketShow.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/support/tickets/tickets.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HelpdeskSystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/FaqController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/FaqController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/TicketController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BaseControllerForApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/BaseControllerForApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/FaqController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Client/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Client/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Programmer/TicketController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/FaqController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/FaqController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/ProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/ProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/BaseControllerForClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/BaseControllerForClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Client/FaqController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Client/FaqController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Client/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Client/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Programmer/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Admin/Projects/ProjectCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/Projects/ProjectCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Client/TicketCreateReqest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Client/TicketCreateReqest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Programmer/TicketEditReqest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Programmer/TicketEditReqest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/Faq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/Project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProjectUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/Ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TicketUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_17_054536_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_054536_create_projects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_27_121510_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_27_121510_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_27_121512_create_tickets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_27_121512_create_tickets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_02_101511_create_faqs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_02_101511_create_faqs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_050315_create_tickets2_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/faq/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/faq/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/faq/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/faq/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/faq/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/faq/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/faq/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/faq/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/right.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/projects/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/projects/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/projects/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/projects/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/projects/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/projects/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/projects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/projects/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tickets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tickets/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/layouts/right.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/tickets/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/tickets/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/tickets/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/tickets/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/tickets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/tickets/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/tickets/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/tickets/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/layouts/right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/layouts/right.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/tickets/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/tickets/_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/tickets/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/tickets/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/tickets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/tickets/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/programmer/tickets/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programmer/tickets/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/Support/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/Support/TicketController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -221,8 +92,8 @@
       <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/Support/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            <state relative-caret-position="651">
+              <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
               <folding>
                 <element signature="e#55#111#0#PHP" expanded="true" />
               </folding>
@@ -265,6 +136,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -551,15 +427,16 @@
       <workItem from="1617942893187" duration="3057000" />
       <workItem from="1618203196730" duration="39083000" />
       <workItem from="1619154619711" duration="12708000" />
-      <workItem from="1619416917741" duration="8139000" />
+      <workItem from="1619416917741" duration="8674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1012062000" />
+    <option name="totallyTimeSpent" value="1012597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2568" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16866507" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -921,8 +798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/Support/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        <state relative-caret-position="651">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
           <folding>
             <element signature="e#55#111#0#PHP" expanded="true" />
           </folding>
