@@ -28,7 +28,7 @@ Route::group(['namespace' => 'Client\Admin', 'middleware' => 'role', 'prefix' =>
     Route::post('comment', 'CommentController@store')->name('comment.store');
     Route::post('ticket/{id}/close','TicketController@closeTicket')->name('ticket.close');
 });
-Route::group(['namespace' => 'Client\Support', 'middleware' => 'roleSupport', 'prefix' => 'support'], function (){
+Route::group(['namespace' => 'Client\Support', 'middleware' => ['roleSupport'], 'prefix' => 'support'], function (){
     Route::resource('ticks2', 'TicketController')->except('show','create','store');
     Route::get('ticks2/{ticket}','TicketController@tickets')->name('ticks2.ticket');
     Route::get('ticksShow/{id}','TicketController@show')->name('ticks2.show');

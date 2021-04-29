@@ -27,8 +27,6 @@ class roleSupport
         elseif($user == 4){
             return redirect()->route('logout',app()->getLocale());
         }
-        else{
         return $next($request);
-        }
     }
 }
