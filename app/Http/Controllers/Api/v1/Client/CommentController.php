@@ -13,7 +13,10 @@ class CommentController extends BaseControllerForApi
     public function index()
     {
         $user = Auth::user();
-        return $user->id->ticket;
+        $ticket = TicketUser::where('')
+        foreach ($user->tickets as $ticket){
+            return $ticket;
+        }
     }
 
     public function list($id=1)

@@ -8,6 +8,8 @@ use App\Models\v1\Ticket;
 use Illuminate\Http\Request;
 use App\Models\v1\Project;
 use App\Models\v1\Comment;
+use Illuminate\Support\Facades\Auth;
+
 class TicketController extends BaseControllerForClient
 {
     public function index(){
@@ -56,6 +58,8 @@ class TicketController extends BaseControllerForClient
     }
 
     public function store(Request $request,$id){
+        $user = Auth::user();
+        dd($user);
         $project = Project::select('id')->where('id',$id)->first();
         $requestAll = $request->except('_token');
         if($request->hasFile('screenshot')==true) {
@@ -71,7 +75,7 @@ class TicketController extends BaseControllerForClient
         $ticket->description = $request->description;
         $ticket->screenshot = $fileName;
         $ticket->category_id = $request->category_id;
-        $ticket->client_id = $request->client_id;
+        $ticket->user_id = $user->id;
         $ticket->priority = $request->priority;
         if($project->users){
             $ticket->project_id = $id;
