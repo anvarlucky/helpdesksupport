@@ -70,6 +70,7 @@ class TicketController extends BaseControllerForApi
     }
 
     public function comments($programmerId){
+        //git uchun
         $programmer = User::select('*')->findOrFail($programmerId);
         return $programmer->tickets;
         foreach ($programmer->tickets as $ticket){

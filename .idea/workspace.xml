@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad08b1f4-4ce0-43ff-a890-94a3a68f74c9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Client/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Client/CommentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/v1/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/v1/Ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+            <state relative-caret-position="816">
+              <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
               <folding>
                 <element signature="e#58#111#0#PHP" expanded="true" />
               </folding>
@@ -180,8 +177,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Client/CommentController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Models/v1/Ticket.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php" />
       </list>
     </option>
   </component>
@@ -315,7 +312,7 @@
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-2568" />
     <option name="y" value="-8" />
     <option name="width" value="2576" />
@@ -506,12 +503,12 @@
       <workItem from="1619154619711" duration="12708000" />
       <workItem from="1619416917741" duration="46078000" />
       <workItem from="1620120262549" duration="48000" />
-      <workItem from="1620120460210" duration="2013000" />
+      <workItem from="1620120460210" duration="2994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1052062000" />
+    <option name="totallyTimeSpent" value="1053043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2568" y="-8" width="2576" height="1416" extended-state="6" />
@@ -524,7 +521,7 @@
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32978722" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960032" weight="0.29869068" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.3297362" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17186251" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17186251" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -838,8 +835,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/v1/Programmer/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        <state relative-caret-position="816">
+          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding>
             <element signature="e#58#111#0#PHP" expanded="true" />
           </folding>
