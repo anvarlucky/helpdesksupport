@@ -18,13 +18,13 @@ class AuthController extends BaseControllerForClient
                 if(session('role')==1) {
                     return redirect()->route('home',app()->getLocale());
                 }
-                if(session('role')==2) {
+                elseif(session('role')==2) {
                     return redirect()->route('tickets.index',app()->getLocale());
                 }
-                if(session('role')==3) {
+                elseif(session('role')==3) {
                     return redirect()->route('ticks2.index',app()->getLocale());
                 }
-                if(session('role')==4) {
+                elseif(session('role')==4) {
                     return redirect()->route('ticks.index',app()->getLocale());
                 }
                 else{
