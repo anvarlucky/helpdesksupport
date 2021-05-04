@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Api\v1\Programmer;
 use App\Http\Controllers\Api\v1\BaseControllerForApi;
 use App\Http\Requests\Programmer\TicketEditReqest;
 use App\Models\v1\Ticket;
+use App\Models\v1\TicketUser;
+use App\Models\v1\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class TicketController extends BaseControllerForApi
 {
 
     public function index()
     {
-
         $user = Auth::user();
         return $this->responseSuccess($user->tickets);
 /*        foreach ($projects as $project)
@@ -60,5 +62,19 @@ class TicketController extends BaseControllerForApi
         if ($user->id == $ticket->client_id) {
             return $this->responseSuccess($ticket);
         }
+    }
+
+    public function tickets($programmerId){
+        $programmer = User::select('*')->findOrFail($programmerId);
+        return $this->responseSuccess($programmer->tickets);
+    }
+
+    public function comments($programmerId){
+        $programmer = User::select('*')->findOrFail($programmerId);
+        return $programmer->tickets;
+        foreach ($programmer->tickets as $ticket){
+            return $ticket->comments;
+        }
+        return $this->responseSuccess($programmer->tickets);
     }
 }

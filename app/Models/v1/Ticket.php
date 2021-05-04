@@ -49,5 +49,7 @@ class Ticket extends Model
         return $this->belongsTo('App\Models\v1\Project');
     }
 
-
+    public function comments(){
+        return $this->belongsToMany('App\Models\v1\Comment');
+    }
 }

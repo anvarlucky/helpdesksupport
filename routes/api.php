@@ -3,7 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 Route::apiResource('ticks1', 'Api\v1\Client\TicketController');
-Route::get('ticketProgrammer','Api\v1\Admin\TicketController@index')->name('tic');
+Route::get('ticketAll','Api\v1\Admin\TicketController@index')->name('tic');
+Route::get('ticketProgrammer/{programmer_id}', 'Api\v1\Programmer\TicketController@tickets');
+Route::get('ticketProgrammer/{programmer_id}', 'Api\v1\Programmer\TicketController@comments');
 Route::post('login', 'Api\v1\AuthController@login');
 Route::group(['middleware' => ['auth:api']], function() {
     Route::match(['get','post'],'logout', 'Api\v1\AuthController@logout');
