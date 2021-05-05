@@ -24,9 +24,9 @@
                     <tr>
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$project->id}} </td>
-                        <td>  <span class="name">{{$project->name}}</span> </td>
-                        <td> <span class="product">{{$project->url}}</span> </td>
-                        <td><span class="count">{{$project->name}}</span></td>
+                        <td><span >{{$project->name}}</span> </td>
+                        <td><span >{{$project->url}}</span> </td>
+                        <td><span>{{$project->id}}</span></td>
                         <td>
                             <a href="{{route('projects.show',$project->id)}}"><span class="fa fa-window-maximize"></span></a>
                         </td>
