@@ -13,6 +13,14 @@ class Project extends Model
         return Project::select('*')->get();
     }
 
+    public static function getWithProgrammers(){
+        $projectUser = Project::select('projects.*', 'usr.firstname')
+            ->join('project_user','projects.id')
+            ->leftJoin('users as usr','projects.id as id')
+            ->get();
+        return $projectUser;
+    }
+
     public static function getOne($id)
     {
         return Project::select('*')->where('id',$id)->get();
