@@ -11,7 +11,7 @@ class AuthController extends BaseControllerForClient
     public function login(Request $request)
     {
         if($request->isMethod('post')) {
-            $response = $this->post('http://support.mc.uz/api/login',$request->except('_token'));
+            $response = $this->post('http://helpdesk.loc/api/login',$request->except('_token'));
             if($response->success && $response->data->token)
             {
                 session(['access-token' => $response->data->token, 'user' => $response->data->user, 'role' => $response->data->role,'user_id' => $response->data->user_id]);
