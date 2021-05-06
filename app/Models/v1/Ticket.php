@@ -52,4 +52,13 @@ class Ticket extends Model
     public function comments(){
         return $this->belongsToMany('App\Models\v1\Comment');
     }
+
+    public static function getAllProjectsAndCategories(){
+        $projectsCategories = Ticket::select('tickets.*', 'projects.name as project_name','categories.name->uz as name_uz')
+            ->join('categories','categories.project_id','=','tickets.project_id')
+            ->leftJoin('projects','tickets.project_id','=','projects.id')
+            ->orderBy('id')
+            ->get()->unique();
+        return $projectsCategories;
+    }
 }

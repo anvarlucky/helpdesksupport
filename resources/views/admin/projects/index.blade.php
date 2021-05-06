@@ -26,7 +26,7 @@
                         <td> #{{$project->id}} </td>
                         <td><span >{{$project->name}}</span> </td>
                         <td><span >{{$project->url}}</span> </td>
-                        <td><span>{{$project->id}}</span></td>
+                        <td><span>{{$project->firstname}} {{$project->lastname}}</span></td>
                         <td>
                             <a href="{{route('projects.show',$project->id)}}"><span class="fa fa-window-maximize"></span></a>
                         </td>

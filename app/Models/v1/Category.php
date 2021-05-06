@@ -23,4 +23,18 @@ class Category extends Model
     {
         return $this->belongsTo('App\Models\v1\Project');
     }
+
+    public static function getAllByProject(){
+        $projectCategory = Category::select('categories.name->uz as name_uz','projects.name as project_name','categories.id')
+            ->join('projects','categories.project_id','=','projects.id')
+            ->get();
+        return $projectCategory;
+    }
+
+    public static function getProjectByID($id){
+        $projectCategorySingle = Category::select('categories.name->uz as name_uz','projects.name as project_name','categories.id','categories.name','categories.project_id')
+            ->leftJoin('projects','categories.project_id','=','projects.id')
+            ->findOrFail($id);
+        return $projectCategorySingle;
+    }
 }
