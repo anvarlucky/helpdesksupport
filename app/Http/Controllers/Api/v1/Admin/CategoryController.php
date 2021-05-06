@@ -11,7 +11,8 @@ class CategoryController extends BaseControllerForApi
 {
     public function index()
     {
-        $categories = Category::select('*','name->uz as name_uz')->get();
+        //$categories = Category::select('*','name->uz as name_uz')->get();
+        $categories = Category::getAllByProject();
         return $this->responseSuccess($categories);
     }
 
@@ -22,7 +23,7 @@ class CategoryController extends BaseControllerForApi
     }
 
     public function show($id){
-        $category = Category::select('*','name->uz as name_uz','name->ru as name_ru', 'name->en as name_en')->findOrFail($id);
+        $category = Category::getProjectByID($id);
         return $this->responseSuccess($category);
     }
 

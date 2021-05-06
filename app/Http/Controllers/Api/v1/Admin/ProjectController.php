@@ -13,7 +13,7 @@ class ProjectController extends BaseControllerForApi
 {
     public function index()
     {
-        $projects = Project::getAll();
+        $projects = Project::getWithProgrammers();
         return $this->responseSuccess($projects);
 
     }

@@ -24,7 +24,7 @@
                     <tr>
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$category->id}} </td>
-                        <td>{{$category->project_id}}</td>
+                        <td>{{$category->project_name}}</td>
                         <td>  <span class="name">{{$category->name_uz}}</span> </td>
                         <td>
                             <a href="{{route('categories.show',$category->id)}}"><span class="fa fa-window-maximize"></span></a>
@@ -38,7 +38,7 @@
                                 'method' => 'DELETE',
                                 'route' => ['categories.destroy', $category->id]
                             ]) !!}
-                            <button class="fa fa-remove" type="submit" onclick="return confirm('Quyidagi foydalanuvchi {{$category->name}}ni o`chirmoqchimisiz?')"></button>
+                            <button class="fa fa-remove" type="submit" onclick="return confirm('Quyidagi foydalanuvchi {{$category->name_uz}}ni o`chirmoqchimisiz?')"></button>
                             {{--{!! Form::submit('', ['class' => 'fa fa-remove']) !!}--}}
                             {!! Form::close() !!}
                         </td>

@@ -17,9 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->jsonb('name');
             $table->unsignedBigInteger('project_id');
-            $table->foreign('project_id')
-                ->references('id')
-                ->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
             $table->softDeletes();
         });

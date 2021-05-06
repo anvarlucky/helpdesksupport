@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client\Admin;
 
 use App\Http\Controllers\Client\BaseControllerForClient;
+use App\Models\v1\Project;
 use Illuminate\Http\Request;
 
 
@@ -12,7 +13,7 @@ class ProjectController extends BaseControllerForClient
    {
        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
        return view('admin.projects.index',[
-           'projects' => $projects->data
+           'projects' => $projects->data,
        ]);
    }
 

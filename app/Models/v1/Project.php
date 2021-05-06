@@ -3,6 +3,7 @@
 namespace App\Models\v1;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Project extends Model
 {
@@ -14,9 +15,10 @@ class Project extends Model
     }
 
     public static function getWithProgrammers(){
-        $projectUser = Project::select('projects.*', 'usr.firstname')
-            ->join('project_user','projects.id')
-            ->leftJoin('users as usr','projects.id as id')
+        $projectUser = DB::table('project_user')
+            ->leftJoin('users','project_user.user_id', '=', 'users.id')
+            ->leftJoin('projects','project_user.project_id','=','projects.id')
+            ->select('projects.*','users.lastname','users.firstname')
             ->get();
         return $projectUser;
     }
