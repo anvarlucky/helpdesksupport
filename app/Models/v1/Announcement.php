@@ -4,6 +4,7 @@ namespace App\Models\v1;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class Announcement extends Model
 {
@@ -28,5 +29,14 @@ class Announcement extends Model
     public function projects()
     {
         return $this->belongsToMany('App\Models\v1\Project','announcement_project','announcement_id','project_id')->withTimestamps();
+    }
+
+    public static function announceProjects(){
+        $announceProject = DB::table('announcement_project as ap')
+            ->leftJoin('announcements as a','ap.announcement_id', '=', 'a.id')
+            ->leftJoin('projects as p','ap.project_id','=','p.id')
+            ->select('a.*','p.name as project_name')
+            ->get();
+        return $announceProject;
     }
 }

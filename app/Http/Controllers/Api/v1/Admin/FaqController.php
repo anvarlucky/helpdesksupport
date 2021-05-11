@@ -11,7 +11,7 @@ class FaqController extends BaseControllerForApi
 {
     public function index()
     {
-        $faqs = Faq::select('*','title->uz as title_uz')->get();
+        $faqs = Faq::projectsFaq();
         return $this->responseSuccess($faqs);
     }
 
@@ -44,7 +44,8 @@ class FaqController extends BaseControllerForApi
     }
 
     public function show($id){
-        $faq = Faq::select('*','title->uz as title_uz','title->ru as title_ru','title->en as title_en','text->uz as text_uz','text->ru as text_ru','text->en as text_en')->findOrFail($id);
+        //$faq = Faq::select('*','title->uz as title_uz','title->ru as title_ru','title->en as title_en','text->uz as text_uz','text->ru as text_ru','text->en as text_en')->findOrFail($id);
+        $faq = Faq::projectFaq($id);
         return $this->responseSuccess($faq);
     }
 

@@ -25,7 +25,7 @@ Route::group(['namespace' => 'Client\Admin', 'middleware' => 'role', 'prefix' =>
     Route::resource('projects', 'ProjectController');
     Route::resource('faq', 'FaqController');
     Route::resource('ticket','TicketController');
-    Route::post('comment', 'CommentController@store')->name('comment.store');
+    Route::post('ticket/{id}', 'CommentController@create')->name('comment.create');
     Route::post('ticket/{id}/close','TicketController@closeTicket')->name('ticket.close');
 });
 Route::group(['namespace' => 'Client\Support', 'middleware' => 'roleSupport', 'prefix' => 'support'], function (){
