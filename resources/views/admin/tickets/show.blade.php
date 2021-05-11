@@ -7,7 +7,7 @@
         <button type="submit" class="btn btn-success ml-3">Ticketni Yopish</button>
         {!! Form::close() !!}
         @endif
-            <p><b>Tiket id:</b>{{$ticket->id}} | <b>Vaqti:</b> {{\Carbon\Carbon::parse($ticket->created_at)->format('Y-m-d h:i:s')}} |<b>Kim tomonidan:</b> {{$ticket->client_id}}</p>
+            <p><b>Tiket id:</b>{{$ticket->id}} | <b>Vaqti:</b> {{\Carbon\Carbon::parse($ticket->created_at)->format('Y-m-d h:i:s')}} |<b>Kim tomonidan:</b> @if($ticket->fullname == null){{$ticket->firstname }} {{ $ticket->lastname}}@else{{$ticket->fullname}}@endif</p>
     Tiket mavzu:<p>{{$ticket->title}}</p>
     Ticket matn:<p>{{$ticket->description}}</p>
     @if($ticket->screenshot != null)
@@ -22,12 +22,14 @@
             Javob deadline:<p>{{$ticket->deadline}}</p>
             @endif
     @endif
+            <h3>Izohlar:</h3>
+            <br/>
             @foreach($comments as $comment)
-                <h6>{{$comment->user->firstname}} {{$comment->user->lastname}}</h6>
-                <p>{{$comment->comment}}  |  {{$comment->created_at}} </p>
+                <h6>{{$comment->firstname}} {{$comment->lastname}}</h6>
+                <p>{{$comment->comment}}  |  {{\Carbon\Carbon::parse($comment->created_at)->format('Y-m-d h:i:s')}} </p>
             @endforeach
         @if($ticket->status !=3)
-        {!! Form::open(['route' => ['comment.store',app()->getLocale()],'method' => 'post']) !!}
+        {!! Form::open(['route' => ['comment.create',[$ticket->id,app()->getLocale()]],'method' => 'post']) !!}
         @csrf
         @if (isset($user))
             {!! Form::hidden('user_id', $user) !!}

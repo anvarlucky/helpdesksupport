@@ -24,9 +24,9 @@ class FaqCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title.uz' => 'required|min:3|max:255|unique:faqs,title->uz',
-            'title.ru' => 'required|min:3|max:255|unique:faqs,title->ru',
-            'title.en' => 'required|min:3|max:255|unique:faqs,title->en',
+            'title.uz' => 'required|min:3|max:255|alpha|unique:faqs,title->uz',
+            'title.ru' => 'required|min:3|max:255|alpha|unique:faqs,title->ru',
+            'title.en' => 'required|min:3|max:255|alpha|unique:faqs,title->en',
             'text.uz' => 'required|min:3|max:255|unique:faqs,text->uz',
             'text.ru' => 'required|min:3|max:255|unique:faqs,text->ru',
             'text.en' => 'required|min:3|max:255|unique:faqs,text->en',

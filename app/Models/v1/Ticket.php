@@ -61,4 +61,12 @@ class Ticket extends Model
             ->get()->unique();
         return $projectsCategories;
     }
+
+    public static function ticketClient($id){
+        $ticketClient = Ticket::select('tickets.*','users.firstname','users.lastname')
+            ->where('tickets.id',$id)
+            ->leftJoin('users','tickets.client_id','=','users.id')
+            ->first();
+        return $ticketClient;
+    }
 }

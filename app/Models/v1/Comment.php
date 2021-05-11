@@ -14,4 +14,13 @@ class Comment extends Model
     {
         return $this->belongsTo('App\Models\v1\User');
     }
+
+    public static function commentUsers($id){
+        $comment = Comment::select('comments.*','users.firstname','users.lastname')
+            ->where('ticket_id',$id)
+            ->join('tickets','comments.ticket_id','=','tickets.id')
+            ->join('users','comments.user_id','=','users.id')
+            ->get();
+        return $comment;
+    }
 }

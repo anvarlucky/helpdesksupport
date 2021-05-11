@@ -38,4 +38,19 @@ class Faq extends Model
     {
         return $this->belongsTo('App\Models\v1\Project');
     }
+
+    public static function projectsFaq(){
+        $faq = Faq::select('faqs.title->uz as title_uz','faqs.id', 'projects.name as project_name')
+            ->leftJoin('projects','faqs.project_id','=','projects.id')
+            ->get();
+        return $faq;
+    }
+
+    public static function projectFaq($id){
+        $faq = Faq::select('faqs.title->uz as title_uz','faqs.id','faqs.text->uz as text_uz','faqs.file','projects.name as project_name')
+            ->where('faqs.id',$id)
+            ->leftJoin('projects','faqs.project_id','=','projects.id')
+            ->first();
+        return $faq;
+    }
 }

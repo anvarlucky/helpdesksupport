@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
     <p><b>FAQ nomi:</b> {{$faq->title_uz}}</p>
-    <p><b>FAQ Dasturi:</b> {{$faq->project_id}}</p>
+    <p><b>FAQ Dasturi:</b> {{$faq->project_name}}</p>
     <p><b>FAQ Matni:</b> {{$faq->text_uz}}</p>
     <p><b>FAQ Fayli:</b> @if($faq->file != null)
             <video width="400" height="300" controls>

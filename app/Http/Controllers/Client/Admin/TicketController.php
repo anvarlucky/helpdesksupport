@@ -42,18 +42,19 @@ class TicketController extends BaseControllerForClient
     public function show($id)
     {
         $user = session('user_id');
-        $ticket = Ticket::select('*')->where('id',$id)->get();
+/*        $ticket = Ticket::select('*')->where('id',$id)->get();
         foreach ($ticket as $tick)
         {
             $comment = Comment::select('*')->where('ticket_id',$tick->id)->get();
-        }
+        }*/
+        $comments = $this->get('http://helpdesk.loc/api/admin/ticket/'.$id.'/comment');
         $routeId = $id;
         $ticket = $this->get('http://helpdesk.loc/api/admin/ticket/'.$id);
         return view('admin.tickets.show',[
             'ticket' => $ticket->data,
             'user' => $user,
             'routeId' => $routeId,
-            'comments' => $comment
+            'comments' => $comments->data
         ]);
 
     }

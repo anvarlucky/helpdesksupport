@@ -26,7 +26,7 @@ class BaseControllerForApi extends Controller
     public function responseSuccess($response){
         return response()->json([
             'success' => true,
-            'lang' => app()->getLocale(),
+            'lang' => 'en',
             'data' => $response
         ])->withHeaders($this->headers);
     }

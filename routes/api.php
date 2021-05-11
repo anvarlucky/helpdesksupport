@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Api\v1\Admin', 'prefix' => 'admin'], function(){
    Route::apiResource('faq', 'FaqController');
    Route::apiResource('ticket','TicketController');
    Route::match(['get','post'],'ticket/{id}/comment','TicketController@comment')->name('ticket.comment');
+   Route::match(['get','post'],'ticket/{id}/comment','CommentController@create')->name('comment');
    Route::apiResource('home','HomeController');
    Route::post('close/{id}','TicketController@closeTicket')->name('ticket.close');
    Route::get('logout', 'Api\AuthController@logout');

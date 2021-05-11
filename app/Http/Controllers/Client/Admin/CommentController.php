@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Client\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Client\BaseControllerForClient;
 use Illuminate\Http\Request;
-use App\Models\v1\Comment;
 
-class CommentController extends Controller
+class CommentController extends BaseControllerForClient
 {
-    public function store(Request $request)
+    public function create(Request $request,$id)
     {
-        $comment = new Comment();
+        $request = $request->except('_token');
+        $comment = $this->post('http://helpdesk.loc/api/admin/ticket/'.$id.'/comment',$request);
+        if($comment == true){
+            return redirect()->back();
+        }
+        /*$comment = new Comment();
         $comment->user_id = $request->user_id;
         $comment->ticket_id = $request->ticket_id;
         $comment->comment = $request->comment;
@@ -19,7 +23,7 @@ class CommentController extends Controller
             return redirect()->back();
         }
         $comment->save();
-        return redirect()->back();
+        return redirect()->back();*/
     }
 }
 

@@ -15,7 +15,8 @@ class AnnouncementController extends BaseControllerForApi
      */
     public function index()
     {
-        return $this->responseSuccess(Announcement::select('id','title')->get());
+        //return $this->responseSuccess(Announcement::select('id','title')->get());
+        return $this->responseSuccess(Announcement::announceProjects());
     }
 
     public function store(Request $request)

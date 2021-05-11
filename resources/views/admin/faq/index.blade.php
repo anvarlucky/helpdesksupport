@@ -12,6 +12,7 @@
                     <th class="serial">#</th>
                     <th>ID</th>
                     <th>@lang('table.title')</th>
+                    <th>Dastur</th>
                     <th>Ko'rish</th>
                     <th>O'zgartirish</th>
                     <th>O'chirish</th>
@@ -24,6 +25,7 @@
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$faq->id}} </td>
                         <td>  <span class="name">{{$faq->title_uz}}</span> </td>
+                        <td>  <span class="name">{{$faq->project_name}}</span> </td>
                         <td>
                             <a href="{{route('faq.show',$faq->id)}}"><span class="fa fa-window-maximize"></span></a>
                         </td>
@@ -36,7 +38,7 @@
                                 'method' => 'DELETE',
                                 'route' => ['faq.destroy', $faq->id]
                             ]) !!}
-                            <button class="fa fa-remove" type="submit" onclick="return confirm('Quyidagi foydalanuvchi {{$faq->title}}ni o`chirmoqchimisiz?')"></button>
+                            <button class="fa fa-remove" type="submit" onclick="return confirm('Quyidagi foydalanuvchi {{$faq->title_uz}}ni o`chirmoqchimisiz?')"></button>
                             {{--{!! Form::submit('', ['class' => 'fa fa-remove']) !!}--}}
                             {!! Form::close() !!}
                         </td>

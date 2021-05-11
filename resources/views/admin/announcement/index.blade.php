@@ -25,7 +25,7 @@
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$announcement->id}} </td>
                         <td>{{$announcement->title}}</td>
-                        <td>{{$announcement->id}}</td>
+                        <td>{{$announcement->project_name}}</td>
                         <td>
                             <a href="{{route('announcement.show',$announcement->id)}}"><span class="fa fa-window-maximize"></span></a>
                         </td>
