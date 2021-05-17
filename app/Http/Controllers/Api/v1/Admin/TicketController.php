@@ -13,7 +13,7 @@ class TicketController extends BaseControllerForApi
 {
     public function index()
     {
-        $tickets = Ticket::all();
+        $tickets = Ticket::getAllProjectsAndCategories();
         return $this->responseSuccess($tickets);
     }
 
