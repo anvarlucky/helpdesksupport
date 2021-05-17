@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\v1\Client;
 
 use App\Http\Controllers\Api\v1\BaseControllerForApi;
 use App\Http\Requests\Client\TicketCreateReqest;
+use App\Models\v1\Category;
 use App\Models\v1\Project;
 use App\Models\v1\Ticket;
 use App\Models\v1\User;
@@ -18,6 +19,11 @@ class TicketController extends BaseControllerForApi
         if ($tickets == true) {
             return $this->responseSuccess($tickets);
         }
+    }
+
+    public function create(){
+        $category = Category::all();
+        return $this->responseSuccess($category);
     }
 
     public function store(TicketCreateReqest $request)
