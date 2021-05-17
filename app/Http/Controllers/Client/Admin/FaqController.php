@@ -10,7 +10,7 @@ class FaqController extends BaseControllerForClient
 {
     public function index()
     {
-        $faqs = $this->get('http://helpdesk.loc/api/admin/faq');
+        $faqs = $this->get('http://support.mc.uz/api/admin/faq');
         return view('admin.faq.index',[
             'faqs' => $faqs->data
         ]);
@@ -18,7 +18,7 @@ class FaqController extends BaseControllerForClient
 
     public function create()
     {
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
         return view('admin.faq.create',[
             'projects' => $projects->data
         ]);
@@ -27,7 +27,7 @@ class FaqController extends BaseControllerForClient
     public function store(Request $request)
     {
         $request = $request->except('_token');
-        $ticket = $this->put('http://helpdesk.loc/api/admin/faq',$request,true,'file');
+        $ticket = $this->put('http://support.mc.uz/api/admin/faq',$request,true,'file');
         if($ticket == true)
         {
             return redirect()->route('faq.index');
@@ -35,7 +35,7 @@ class FaqController extends BaseControllerForClient
     }
 
     public function show($id){
-        $faq = $this->get('http://helpdesk.loc/api/admin/faq/'.$id);
+        $faq = $this->get('http://support.mc.uz/api/admin/faq/'.$id);
         if ($faq->success){
             return view('admin.faq.show',[
                 'faq' => $faq->data
@@ -44,7 +44,7 @@ class FaqController extends BaseControllerForClient
     }
 
     public function edit($id){
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
         $faq = $this->get('http://helpdesk.loc/api/admin/faq/'.$id);
         return view('admin.faq.edit',[
             'projects' => $projects->data,
@@ -54,14 +54,14 @@ class FaqController extends BaseControllerForClient
 
     public function update(Request $request,$id){
         $request = $request->except('_token');
-        $faq = $this->put('http://helpdesk.loc/api/admin/faq/'.$id,$request,true,'file');
+        $faq = $this->put('http://support.mc.uz/api/admin/faq/'.$id,$request,true,'file');
         if ($faq->success){
             return redirect()->route('faq.index');
         }
     }
 
     public function destroy($id){
-        $faq = $this->delete('http://helpdesk.loc/api/admin/faq/'.$id);
+        $faq = $this->delete('http://support.mc.uz/api/admin/faq/'.$id);
         if ($faq->success){
             return redirect()->route('faq.index');
         }
