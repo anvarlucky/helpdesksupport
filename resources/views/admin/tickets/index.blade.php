@@ -25,7 +25,7 @@
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$ticket->id}} </td>
                         <td><a href="{{route('ticket.show',[/*app()->getLocale(),*/$ticket->id])}}">  <span class="name">{{$ticket->title}}</span></a> </td>
-                        <td> <span class="product">{{$ticket->project_id}}</span> </td>
+                        <td> <span class="product">{{$ticket->project_name}}</span> </td>
                         @if($ticket->priority==1)
                             <td class="alert-primary"></td>
                         @elseif($ticket->priority==2)
@@ -35,7 +35,7 @@
                         @else
                             <td></td>
                         @endif
-                        <td><span class="count">{{$ticket->category_id}}</span></td>
+                        <td><span>{{$ticket->category_name}}</span></td>
                         @if($ticket->status==1)
                         <td><span class="btn btn-danger">@lang('table.open')</span></td>
                         @elseif($ticket->status==2)

@@ -54,11 +54,10 @@ class Ticket extends Model
     }
 
     public static function getAllProjectsAndCategories(){
-        $projectsCategories = Ticket::select('tickets.*', 'projects.name as project_name','categories.name->uz as name_uz')
-            ->join('categories','categories.project_id','=','tickets.project_id')
+        $projectsCategories = Ticket::select('tickets.*', 'projects.name as project_name','categories.name->uz as category_name')
             ->leftJoin('projects','tickets.project_id','=','projects.id')
-            ->orderBy('id')
-            ->get()->unique();
+            ->leftJoin('categories','tickets.category_id', '=','categories.id')
+            ->get();
         return $projectsCategories;
     }
 
