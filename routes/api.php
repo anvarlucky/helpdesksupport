@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 Route::apiResource('ticks1', 'Api\v1\Client\TicketController');
 Route::get('ticketAll','Api\v1\Admin\TicketController@index')->name('tic');
+Route::get('categoryAll','Api\v1\Admin\CategoryController@index')->name('cat');
 Route::get('ticketProgrammer/{programmer_id}', 'Api\v1\Programmer\TicketController@tickets');
 Route::get('ticketProgrammer/{programmer_id}', 'Api\v1\Programmer\TicketController@comments');
 Route::post('login', 'Api\v1\AuthController@login');
