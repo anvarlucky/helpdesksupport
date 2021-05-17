@@ -11,7 +11,7 @@ class TicketController extends BaseControllerForClient
 {
     public function index()
     {
-        $tickets = $this->get('http://helpdesk.loc/api/admin/ticket');
+        $tickets = $this->get('http://support.mc.uz/api/admin/ticket');
         return view('admin.tickets.index',[
            'tickets' => $tickets->data
         ]);
@@ -20,8 +20,8 @@ class TicketController extends BaseControllerForClient
     public function create()
     {
         $user = session('user_id');
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
-        $categories = $this->get('http://helpdesk.loc/api/admin/categories');
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
+        $categories = $this->get('http://support.mc.uz/api/admin/categories');
         return view('admin.tickets.create',[
             'projects' => $projects->data,
             'categories' => $categories->data,
@@ -32,7 +32,7 @@ class TicketController extends BaseControllerForClient
     public function store(Request $request)
     {
         $request = $request->except('_token');
-        $ticket = $this->put('http://helpdesk.loc/api/admin/ticket',$request,true,'screenshot');
+        $ticket = $this->put('http://support.mc.uz/api/admin/ticket',$request,true,'screenshot');
         if($ticket == true)
         {
             return redirect()->route('ticket.index',app()->getLocale());
@@ -47,9 +47,9 @@ class TicketController extends BaseControllerForClient
         {
             $comment = Comment::select('*')->where('ticket_id',$tick->id)->get();
         }*/
-        $comments = $this->get('http://helpdesk.loc/api/admin/ticket/'.$id.'/comment');
+        $comments = $this->get('http://support.mc.uz/api/admin/ticket/'.$id.'/comment');
         $routeId = $id;
-        $ticket = $this->get('http://helpdesk.loc/api/admin/ticket/'.$id);
+        $ticket = $this->get('http://support.mc.uz/api/admin/ticket/'.$id);
         return view('admin.tickets.show',[
             'ticket' => $ticket->data,
             'user' => $user,
@@ -62,7 +62,7 @@ class TicketController extends BaseControllerForClient
     public function closeTicket(Request $request, $id)
     {
         $request = $request->except('_token');
-        $ticket = $this->post('http://helpdesk.loc/api/admin/close/'.$id,$request);
+        $ticket = $this->post('http://support.mc.uz/api/admin/close/'.$id,$request);
         if($ticket == true)
         {
             return redirect()->route('ticket.index');

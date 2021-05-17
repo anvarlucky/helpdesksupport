@@ -9,7 +9,7 @@ class HomeController extends BaseControllerForClient
 {
     public function index()
     {
-        $statistics = $this->get('http://helpdesk.loc/api/admin/home');
+        $statistics = $this->get('http://support.mc.uz/api/admin/home');
         return view('admin.home',
             [
             'statistics' => $statistics

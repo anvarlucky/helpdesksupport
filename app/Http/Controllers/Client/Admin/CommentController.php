@@ -10,7 +10,7 @@ class CommentController extends BaseControllerForClient
     public function create(Request $request,$id)
     {
         $request = $request->except('_token');
-        $comment = $this->post('http://helpdesk.loc/api/admin/ticket/'.$id.'/comment',$request);
+        $comment = $this->post('http://support.mc.uz/api/admin/ticket/'.$id.'/comment',$request);
         if($comment == true){
             return redirect()->back();
         }

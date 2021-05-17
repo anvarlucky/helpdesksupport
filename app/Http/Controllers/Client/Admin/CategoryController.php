@@ -9,7 +9,7 @@ class CategoryController extends BaseControllerForClient
 {
     public function index()
     {
-        $categories = $this->get('http://helpdesk.loc/api/admin/categories');
+        $categories = $this->get('http://support.mc.uz/api/admin/categories');
         return view('admin.categories.index',[
             'categories' => $categories->data
         ]);
@@ -17,7 +17,7 @@ class CategoryController extends BaseControllerForClient
 
     public function create()
     {
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
         return view('admin.categories.create',
             [
                 'projects' => $projects->data
@@ -27,7 +27,7 @@ class CategoryController extends BaseControllerForClient
     public function store(Request $request)
     {
         $request = $request->except('_token');
-        $category = $this->post('http://helpdesk.loc/api/admin/categories',$request);
+        $category = $this->post('http://support.mc.uz/api/admin/categories',$request);
         if($category->success)
         {
             return redirect()->route('categories.index');
@@ -37,7 +37,7 @@ class CategoryController extends BaseControllerForClient
     }
 
     public function show($id){
-        $category = $this->get('http://helpdesk.loc/api/admin/categories/'.$id);
+        $category = $this->get('http://support.mc.uz/api/admin/categories/'.$id);
         if($category->success){
             return view('admin.categories.show',[
                 'category' => $category->data
@@ -47,8 +47,8 @@ class CategoryController extends BaseControllerForClient
     }
 
     public function edit($id){
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
-        $category = $this->get('http://helpdesk.loc/api/admin/categories/'.$id);
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
+        $category = $this->get('http://support.mc.uz/api/admin/categories/'.$id);
         if($category->success) {
             return view('admin.categories.edit', [
                 'category' => $category->data,
@@ -59,14 +59,14 @@ class CategoryController extends BaseControllerForClient
 
     public function update(Request $request,$id){
         $request = $request->except('_token');
-        $category = $this->put('http://helpdesk.loc/api/admin/categories/'.$id,$request,false);
+        $category = $this->put('http://support.mc.uz/api/admin/categories/'.$id,$request,false);
         if ($category->success){
             return redirect()->route('categories.index');
         }
     }
 
     public function destroy($id){
-        $category = $this->delete('http://helpdesk.loc/api/admin/categories/'.$id);
+        $category = $this->delete('http://support.mc.uz/api/admin/categories/'.$id);
         if ($category->success){
             return redirect()->route('categories.index');
         }
