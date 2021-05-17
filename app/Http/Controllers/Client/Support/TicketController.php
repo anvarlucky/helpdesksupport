@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class TicketController extends BaseControllerForClient
 {
     public function index(){
-        $projects = $this->get('http://helpdesk.loc/api/support/ticks2');
+        $projects = $this->get('http://support.mc.uz/api/support/ticks2');
         $project = Project::all();
         $tickets = Ticket::all();
         return view('support.tickets.index',[

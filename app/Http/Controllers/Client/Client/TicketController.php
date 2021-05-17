@@ -15,7 +15,7 @@ class TicketController extends BaseControllerForClient
 {
     public function index()
     {
-        $tickets = $this->get('http://helpdesk.loc/api/client/ticks');
+        $tickets = $this->get('http://support.mc.uz/api/client/ticks');
         return view('client.tickets.index',[
             'tickets' => $tickets,
         ]);
@@ -24,8 +24,8 @@ class TicketController extends BaseControllerForClient
     public function create()
     {
         $user = session('user_id');
-        $projects = $this->get('http://helpdesk.loc/api/admin/projects');
-        $categories = $this->get('http://helpdesk.loc/api/admin/categories');
+        $projects = $this->get('http://support.mc.uz/api/admin/projects');
+        $categories = $this->get('http://support.mc.uz/api/admin/categories');
         return view('client.tickets.create',[
             'projects' => $projects->data,
             'categories' => $categories->data,
@@ -36,7 +36,7 @@ class TicketController extends BaseControllerForClient
     public function store(Request $request)
     {
         $request = $request->except('_token');
-        $ticket = $this->put('http://helpdesk.loc/api/client/ticks',$request,true,'screenshot');
+        $ticket = $this->put('http://support.mc.uz/api/client/ticks',$request,true,'screenshot');
         if($ticket == true)
         {
             return redirect()->route('ticks.index',app()->getLocale());
@@ -53,7 +53,7 @@ class TicketController extends BaseControllerForClient
             $comment = Comment::select('*')->where('ticket_id',$tick->id)->get();
         }
         $route1 = $id;
-        $ticket = $this->get('http://helpdesk.loc/api/client/ticks/'.$id);
+        $ticket = $this->get('http://support.mc.uz/api/client/ticks/'.$id);
         if ($user == $tick->client_id)
         return view('client.tickets.show',[
             'ticket' => $ticket->data,
