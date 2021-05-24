@@ -19,5 +19,10 @@ class TicketController extends BaseControllerForApi
         return $this->responseSuccess($projects);
     }
 
+    public function projects(){
+        $projects = Project::all();
+        return $this->responseSuccess($projects);
+    }
+
 
 }
