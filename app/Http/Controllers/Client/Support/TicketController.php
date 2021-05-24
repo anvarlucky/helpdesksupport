@@ -14,7 +14,7 @@ class TicketController extends BaseControllerForClient
 {
     public function index(){
         $projects = $this->get('http://support.mc.uz/api/support/ticks2');
-        $project = Project::all();
+        $project = $this->get('http://support.mc.uz/api/support/projects');
         $tickets = Ticket::all();
         return view('support.tickets.index',[
             'projects' => $projects,
