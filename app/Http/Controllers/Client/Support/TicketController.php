@@ -19,7 +19,7 @@ class TicketController extends BaseControllerForClient
         return view('support.tickets.index',[
             'projects' => $projects,
             'tickets' => $tickets,
-            'project' => $project
+            'project' => $project->data
         ]);
     }
 
