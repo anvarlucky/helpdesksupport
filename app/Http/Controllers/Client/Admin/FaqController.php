@@ -45,7 +45,7 @@ class FaqController extends BaseControllerForClient
 
     public function edit($id){
         $projects = $this->get('http://support.mc.uz/api/admin/projects');
-        $faq = $this->get('http://helpdesk.loc/api/admin/faq/'.$id);
+        $faq = $this->get('http://support.mc.uz/api/admin/faq/'.$id);
         return view('admin.faq.edit',[
             'projects' => $projects->data,
             'faq' => $faq->data
