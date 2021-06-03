@@ -34,6 +34,7 @@ Route::group(['namespace' => 'Client\Support', 'prefix' => 'support'], function 
     Route::get('ticksShow/{id}','TicketController@show')->name('ticks2.show');
     Route::match('get','ticks2/{projectId}/create','TicketController@create')->name('ticks2.create');
     Route::match('post','ticks2/{projectId}/store','TicketController@store')->name('ticks2.store');
+    Route::post('comm1', 'CommentController@store')->name('comm1.store');
 });
 });
 Route::match(['get','post'],'logout','Client\AuthController@logout')->name('logout');
