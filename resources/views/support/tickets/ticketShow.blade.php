@@ -21,7 +21,7 @@
             <p>{{$comment->comment}}  |  {{$comment->created_at}} </p>
         @endforeach
         @if($ticket->status !=3)
-            {!! Form::open(['route' => ['comm.store',app()->getLocale()],'method' => 'post']) !!}
+            {!! Form::open(['route' => ['comm1.store',app()->getLocale()],'method' => 'post']) !!}
             @csrf
             @if (isset($user))
                 {!! Form::hidden('user_id', $user) !!}

@@ -34,6 +34,8 @@ class TicketController extends BaseControllerForClient
     }
 
     public function show($id){
+        $user = session('user_id');
+        $routeId = $id;
         $tickets = Ticket::select('*')->where('id',$id)->get();
         $ticket = Ticket::findOrFail($id);
         foreach ($tickets as $tick)
@@ -42,7 +44,9 @@ class TicketController extends BaseControllerForClient
         }
         return view('support.tickets.ticketShow',[
             'ticket' => $ticket,
-            'comments' => $comment
+            'comments' => $comment,
+            'user' => $user,
+            'routeId' => $routeId
         ]);
     }
 
