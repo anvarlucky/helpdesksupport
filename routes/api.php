@@ -38,7 +38,6 @@ Route::group(['namespace' => 'Api\v1\Programmer', 'prefix' => 'programmer'], fun
    Route::apiResource('tickets', 'TicketController');
    Route::get('tickets/{id}/edit', 'TicketController@edit');
    Route::get('logout', 'Api\AuthController@logout');
-   Route::get('log', 'Api\LogController@log');
 });
 Route::group(['namespace' => 'Api\v1\Support', 'prefix' => 'support'], function(){
         Route::apiResource('ticks2', 'TicketController');
