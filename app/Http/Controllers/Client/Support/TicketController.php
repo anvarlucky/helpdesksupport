@@ -25,11 +25,11 @@ class TicketController extends BaseControllerForClient
 
     public function tickets($id){
         //$tickets = Ticket::where('project_id',$id)->get();
-        $tickets = $this->get('http://helpdesk.loc/api/support/ticks2/'.$id);
+        $tickets = $this->get('http://support.mc.uz/api/support/ticks2/'.$id);
         $project = Project::findOrFail($id);
         return view('support.tickets.tickets',
             [
-                'tickets' => $tickets,
+                'tickets' => $tickets->data,
                 'project' => $project
             ]);
     }
