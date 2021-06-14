@@ -24,8 +24,7 @@ class TicketController extends BaseControllerForClient
     }
 
     public function tickets($id){
-        //$tickets = Ticket::where('project_id',$id)->get();
-        $tickets = $this->get('http://support.mc.uz/api/support/ticks2/'.$id);
+        $tickets = $this->get('http://support.mc.uz/api/support/tickSup/'.$id);
         $project = Project::findOrFail($id);
         return view('support.tickets.tickets',
             [
@@ -37,9 +36,9 @@ class TicketController extends BaseControllerForClient
     public function show($id){
         $user = session('user_id');
         $routeId = $id;
-        $tickets = Ticket::select('*')->where('id',$id)->get();
+        $tickets = $this->get('http://support.mc.uz/api/support/tickSup/'.$id);
         $ticket = Ticket::findOrFail($id);
-        foreach ($tickets as $tick)
+        foreach ($tickets->data as $tick)
         {
             $comment = Comment::select('*')->where('ticket_id',$tick->id)->get();
         }
@@ -55,6 +54,7 @@ class TicketController extends BaseControllerForClient
         $project = Project::findOrFail($id);
         $categories = Category::select('*','name->uz as name_uz')->where('project_id',$id)->get();
         $user = session('user_id');
+        dd($user);
         return view('support.tickets.create',[
             'project' => $project,
             'categories' => $categories,

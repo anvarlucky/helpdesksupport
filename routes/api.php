@@ -42,5 +42,6 @@ Route::group(['namespace' => 'Api\v1\Programmer', 'prefix' => 'programmer'], fun
 Route::group(['namespace' => 'Api\v1\Support', 'prefix' => 'support'], function(){
         Route::apiResource('ticks2', 'TicketController');
         Route::get('projects','TicketController@projects');
+        Route::get('tickSup/{project_id}','TicketController@tickets');
     });
 });
