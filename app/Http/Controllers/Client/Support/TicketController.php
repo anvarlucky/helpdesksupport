@@ -36,8 +36,7 @@ class TicketController extends BaseControllerForClient
     public function show($project_id,$id){
         $user = session('user_id');
         $routeId = $id;
-        $tickets = $this->get('http://support.mc.uz/api/support/ticks2/'.$project_id);
-        //dd($tickets);
+        $tickets = $this->get('http://support.mc.uz/api/support/tickSup/'.$project_id);
         $ticket = Ticket::findOrFail($id);
         foreach ($tickets->data as $tick)
         {
