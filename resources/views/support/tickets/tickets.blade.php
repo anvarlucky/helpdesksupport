@@ -24,7 +24,7 @@
                     <tr>
                         <td class="serial">{{++$key}}</td>
                         <td> #{{$ticket->id}} </td>
-                        <td><a href="{{route('ticks2.show',$ticket->id)}}"><span class="name">{{$ticket->title}}</span></a></td>
+                        <td><a href="{{route('ticks2.show',[$project->id,$ticket->id])}}"><span class="name">{{$ticket->title}}</span></a></td>
                         <td> <span class="product">{{$ticket->project_id}}</span> </td>
                         @if($ticket->priority==1)
                             <td class="alert-primary"></td>
