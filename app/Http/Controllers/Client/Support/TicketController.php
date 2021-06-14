@@ -54,7 +54,6 @@ class TicketController extends BaseControllerForClient
         $project = Project::findOrFail($id);
         $categories = Category::select('*','name->uz as name_uz')->where('project_id',$id)->get();
         $user = session('user_id');
-        dd($user);
         return view('support.tickets.create',[
             'project' => $project,
             'categories' => $categories,
@@ -63,8 +62,7 @@ class TicketController extends BaseControllerForClient
     }
 
     public function store(Request $request,$id){
-        $user = Auth::user();
-        dd($user);
+        $user = session('user_id');
         $project = Project::select('id')->where('id',$id)->first();
         $requestAll = $request->except('_token');
         if($request->hasFile('screenshot')==true) {
@@ -80,7 +78,7 @@ class TicketController extends BaseControllerForClient
         $ticket->description = $request->description;
         $ticket->screenshot = $fileName;
         $ticket->category_id = $request->category_id;
-        $ticket->user_id = $user->id;
+        $ticket->client_id = $user;
         $ticket->priority = $request->priority;
         if($project->users){
             $ticket->project_id = $id;
