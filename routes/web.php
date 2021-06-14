@@ -31,7 +31,7 @@ Route::group(['namespace' => 'Client\Admin', 'middleware' => 'role', 'prefix' =>
 Route::group(['namespace' => 'Client\Support', 'prefix' => 'support'], function (){
     Route::resource('ticks2', 'TicketController')->except('show','create','store');
     Route::get('ticks2/{ticket}','TicketController@tickets')->name('ticks2.ticket');
-    Route::get('ticksShow/{id}','TicketController@show')->name('ticks2.show');
+    Route::get('ticks2/{project_id}/{id}','TicketController@show')->name('ticks2.show');
     Route::get('ticks2/{projectId}/create','TicketController@create')->name('ticks2.create');
     Route::post('ticks2/{projectId}/store','TicketController@store')->name('ticks2.store');
     Route::post('comm1', 'CommentController@store')->name('comm1.store');
