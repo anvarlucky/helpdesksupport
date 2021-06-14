@@ -38,10 +38,7 @@ class TicketController extends BaseControllerForClient
         $routeId = $id;
         $tickets = $this->get('http://support.mc.uz/api/support/tickSup/'.$project_id);
         $ticket = Ticket::findOrFail($id);
-        foreach ($tickets->data as $tick)
-        {
-            $comment = Comment::select('*')->where('ticket_id',$tick->id)->get();
-        }
+            $comment = Comment::select('*')->where('ticket_id',$ticket->id)->get();
         return view('support.tickets.ticketShow',[
             'ticket' => $ticket,
             'comments' => $comment,
