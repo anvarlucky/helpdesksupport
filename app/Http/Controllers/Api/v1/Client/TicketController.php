@@ -61,9 +61,10 @@ class TicketController extends BaseControllerForApi
     public function show($id)
     {
         $ticket = Ticket::client($id);
-        //$ticket = Ticket::findOrFail($id);
-        $user = Auth::user();
-        if ($user->id == $ticket->client_id) {
+        $ticket = Ticket::findOrFail($id);
+        return $ticket;
+        $user = session('user_id');
+        if ($user == $ticket->client_id) {
             return $this->responseSuccess($ticket);
         }
     }
