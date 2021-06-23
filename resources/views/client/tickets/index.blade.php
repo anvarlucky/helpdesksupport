@@ -38,7 +38,7 @@
                     @if($ticket->status==1)
                         <td><span class="btn btn-danger">@lang('table.open')</span></td>
                     @elseif($ticket->status==2)
-                        <td><span class="btn btn-primary">@lang('table.answered')</span></td>
+                        <td><span class="btn btn-primary">Ish jarayonida</span></td>
                     @else
                         <td><span class="btn btn-success">@lang('table.closed')</span></td>
                     @endif

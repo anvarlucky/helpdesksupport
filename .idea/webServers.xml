@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="de379803-08ef-4011-97d0-5aae2ff455da" name="Helpdesk" url="http://s1.mc.uz">
-        <fileTransfer host="s1.mc.uz" port="8822" rootFolder="/var/www/HelpdeskSystem" accessType="SFTP">
+      <webServer id="de379803-08ef-4011-97d0-5aae2ff455da" name="Helpdesk" url="http://172.33.1.107">
+        <fileTransfer host="172.33.1.107" port="22" rootFolder="/var/www/HelpdeskSystem" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="8822" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>
