@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="de379803-08ef-4011-97d0-5aae2ff455da" name="Helpdesk" url="http://172.33.1.107">
-        <fileTransfer host="172.33.1.107" port="22" rootFolder="/var/www/HelpdeskSystem" accessType="SFTP">
+        <fileTransfer host="172.33.1.107" port="22" rootFolder="/home/vhosts/support.mc.uz/httpdocs" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
