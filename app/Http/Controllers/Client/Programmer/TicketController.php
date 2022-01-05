@@ -15,7 +15,6 @@ class TicketController extends BaseControllerForClient
        return view('programmer.tickets.index',[
            'tickets' => $response->data
        ]);
-
     }
 
     public function edit($id)

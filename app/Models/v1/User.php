@@ -2,6 +2,7 @@
 
 namespace App\Models\v1;
 
+use Illuminate\Support\Facades\Auth;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -24,6 +25,14 @@ class User extends Authenticatable
     public function tickets()
     {
         return $this->belongsToMany('App\Models\v1\Ticket','ticket_users','user_id','ticket_id')->withTimestamps();
+    }
+
+    public static function ticks(){
+        $user = Auth::user();
+        $tickets = Ticket::select('tickets.id as id','tickets.*','pro.name as pn','cat.name as cn')
+                ->where('tickets.client_id',$user->id)
+            ->leftJoin('projects as pro','pro.id','=',1)->leftJoin('categories as cat','cat.id',1)->get();
+        return $tickets;
     }
 
     public function projects()

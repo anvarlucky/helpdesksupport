@@ -1,7 +1,7 @@
 @extends('programmer.layouts.main')
 @section('content')
     <div class="col-12">
-        <p><b>Tiket id:</b>{{$ticket->id}} | <b>Vaqti:</b> {{\Carbon\Carbon::parse($ticket->created_at)->format('Y-m-d h:i:s')}} |<b>Kim tomonidan:</b> {{$ticket->client_id}}</p>
+        <p><b>Tiket id:</b>{{$ticket->id}} | <b>Vaqti:</b> {{\Carbon\Carbon::parse($ticket->created_at)->format('Y-m-d h:i:s')}} |<b>Kim tomonidan:</b> {{$ticket->client_id??$ticket->fullname}}</p>
         Tiket mavzu:<p>{{$ticket->title}}</p>
         Ticket matn:<p>{{$ticket->description}}</p>
         @if($ticket->screenshot != null)
