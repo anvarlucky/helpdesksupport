@@ -12,8 +12,7 @@ class Announcement extends Model
     public const STORAGE_URL = 'public/announcement/photo';
 
     public static function uploadPhoto($uploadFile){
-        $filename = time().$uploadFile->getClientOriginalName();
-        Storage::disk('local')->putFileAs(
+        $filename = time().$uploadFile->getClientOriginalName();        Storage::disk('local')->putFileAs(
             self::STORAGE_URL,
             $uploadFile,
             $filename
